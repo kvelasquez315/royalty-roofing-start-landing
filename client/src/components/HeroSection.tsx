@@ -26,8 +26,8 @@ export default function HeroSection() {
         position: "relative",
         minHeight: "100vh",
         display: "flex",
-        alignItems: "flex-end",
-        paddingTop: "110px",
+        alignItems: "center",
+        paddingTop: "80px",
         overflow: "hidden",
       }}
     >
@@ -60,11 +60,11 @@ export default function HeroSection() {
           width: "100%",
           maxWidth: "1280px",
           margin: "0 auto",
-          padding: "0 28px 72px",
+          padding: "40px 28px",
           display: "grid",
           gridTemplateColumns: "1fr 420px",
           gap: "48px",
-          alignItems: "end",
+          alignItems: "center",
         }}
         className="hero-grid"
       >
