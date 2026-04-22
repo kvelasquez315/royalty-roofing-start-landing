@@ -33,6 +33,11 @@ const REVIEWS = [
     text: "David did all the negotiating with our insurance and always went to bat for us. The price was fair for a superior product, quality workmanship, and outstanding customer service.",
     stars: 5,
   },
+  {
+    name: "Mike S.",
+    text: "From the initial inspection to the final cleanup, everything was handled professionally. They found damage I didn't even know existed and walked me through every repair. Couldn't be happier with the result.",
+    stars: 5,
+  },
 ];
 
 function SVGStars({ count }: { count: number }) {
@@ -109,7 +114,6 @@ export default function ReviewsSection() {
                 padding: "28px",
                 display: "flex",
                 flexDirection: "column",
-                gridColumn: i === 4 ? "3 / 4" : undefined,
               }}
             >
               <SVGStars count={review.stars} />

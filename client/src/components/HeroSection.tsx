@@ -100,9 +100,9 @@ export default function HeroSection() {
               letterSpacing: "0.01em",
             }}
           >
-            HONEST ROOFING.<br />
-            DONE RIGHT.<br />
-            <span style={{ color: "#3D6CC0" }}>EVERY TIME.</span>
+            FREE ROOF<br />
+            INSPECTION.<br />
+            <span style={{ color: "#3D6CC0" }}>HONEST ANSWERS.</span>
           </h1>
 
           {/* Sub-copy */}
@@ -117,7 +117,7 @@ export default function HeroSection() {
               marginBottom: "28px",
             }}
           >
-            We've been roofing and siding Omaha homes since 2010. We tell you exactly what your roof needs — repair or full replacement — and we back every job with a written warranty. No pressure. No upsell.
+            We get on your roof, document everything with photos, and tell you exactly what it needs — repair or replacement. No pressure, no upsell. Omaha's most trusted roofer since 2010.
           </p>
 
           {/* Trust badge cluster */}
@@ -161,26 +161,15 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Free inspection */}
+            {/* BBB A+ Rating */}
             <div style={badgeStyle}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3D6CC0" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                <polyline points="22 4 12 14.01 9 11.01"/>
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
               </svg>
               <div>
-                <div style={{ fontSize: "12px", fontWeight: 700, color: "white", fontFamily: "var(--font-body)", lineHeight: 1.2 }}>Free Inspection</div>
-                <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.65)", fontFamily: "var(--font-body)" }}>No Obligation</div>
-              </div>
-            </div>
-
-            {/* Insurance */}
-            <div style={badgeStyle}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3D6CC0" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-              <div>
-                <div style={{ fontSize: "12px", fontWeight: 700, color: "white", fontFamily: "var(--font-body)", lineHeight: 1.2 }}>Insurance Claims</div>
-                <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.65)", fontFamily: "var(--font-body)" }}>We Handle It All</div>
+                <div style={{ fontSize: "12px", fontWeight: 700, color: "white", fontFamily: "var(--font-body)", lineHeight: 1.2 }}>BBB Accredited</div>
+                <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.65)", fontFamily: "var(--font-body)" }}>A+ Rating</div>
               </div>
             </div>
           </div>

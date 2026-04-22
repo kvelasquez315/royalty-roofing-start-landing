@@ -52,9 +52,9 @@ export default function BottomFormSection() {
               letterSpacing: "0.01em",
             }}
           >
-            READY TO GET<br />
-            STARTED?<br />
-            <span style={{ color: "#3D6CC0" }}>LET'S TALK.</span>
+            SCHEDULE YOUR<br />
+            FREE INSPECTION<br />
+            <span style={{ color: "#3D6CC0" }}>TODAY.</span>
           </h2>
 
           <p
@@ -67,7 +67,7 @@ export default function BottomFormSection() {
               maxWidth: "480px",
             }}
           >
-            Free consultation. No obligation. We'll come to your home, inspect your roof or siding, and give you an honest assessment — no pressure, no upsell. Response within one business day.
+            We'll come to your home, get on your roof, and give you a full written assessment with photos — completely free. No obligation, no pressure. We tell you what it needs, whether that's a repair or a replacement. Response within one business day.
           </p>
 
           {/* Big phone number */}

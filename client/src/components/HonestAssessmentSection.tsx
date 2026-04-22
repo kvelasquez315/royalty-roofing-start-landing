@@ -11,20 +11,20 @@ const HERO_BG = "/manus-storage/hero-bg_0ebd1de5.webp";
 
 const PROOF_BLOCKS = [
   {
-    label: "We recommend repairs when repairs are the right call",
-    desc: "No job is too small. Most companies push full replacements — we don't. If a repair fixes it, that's what we'll quote.",
+    label: "Free roof inspection — we get on the roof, not just look from the driveway",
+    desc: "We physically inspect every section, document everything with photos, and give you a written assessment. You see exactly what we see.",
   },
   {
-    label: "Free inspection with full photo documentation",
-    desc: "We get on the roof, document everything with photos, and give you a clear written assessment — no guessing.",
+    label: "We quote repairs first — not replacements",
+    desc: "Most companies push full replacements because the margin is higher. If your roof can be repaired, we'll tell you that and do the repair right.",
   },
   {
-    label: "We handle your insurance claim from start to finish",
-    desc: "We work directly with your adjuster. You don't have to navigate the claim process alone.",
+    label: "Storm damage? We handle the entire insurance claim",
+    desc: "We work directly with your adjuster from first contact to final payment. You don't have to fight the insurance company alone.",
   },
   {
-    label: "Local crew — not storm chasers",
-    desc: "Royalty has been rooted in Omaha since 2010. When you call us, you talk to someone who lives here.",
+    label: "Every job backed by a written workmanship warranty",
+    desc: "We stand behind our work. Every repair and replacement comes with a written warranty — not just a handshake.",
   },
 ];
 
@@ -75,9 +75,8 @@ export default function HonestAssessmentSection() {
               letterSpacing: "0.01em",
             }}
           >
-            WE ONLY RECOMMEND<br />
-            WHAT YOUR ROOF<br />
-            <span style={{ color: "#3D6CC0" }}>ACTUALLY NEEDS.</span>
+            WE INSPECT. WE REPAIR.<br />
+            <span style={{ color: "#3D6CC0" }}>WE TELL YOU THE TRUTH.</span>
           </h2>
 
           {/* Body copy */}
@@ -91,7 +90,7 @@ export default function HonestAssessmentSection() {
               maxWidth: "520px",
             }}
           >
-            Most roofing companies push replacements. We don't. If your roof can be repaired, we'll tell you that — and do the repair right. If it needs a full replacement, we'll explain exactly why. You get a straight answer, not a sales pitch.
+            Most roofing companies skip the inspection and go straight to quoting a replacement. We don't. We get on your roof, document what we find, and give you a straight answer — repair or replace. No pressure, no upsell, no guessing.
           </p>
 
           {/* Proof blocks */}

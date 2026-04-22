@@ -11,7 +11,6 @@ const STATS = [
   { display: "4.9★", label: "Google Rating" },
   { display: "7×", label: "Best of Omaha Winner" },
   { display: "15+", label: "Years Serving Omaha" },
-  { display: "500+", label: "Projects Completed" },
 ];
 
 const AWARDS = [
@@ -53,7 +52,7 @@ function AnimatedStat({ display }: { display: string }) {
 
 export default function TrustBar() {
   return (
-    <section style={{ background: "#0A1220", paddingBottom: "64px" }}>
+      <section style={{ background: "#0A1220", paddingBottom: "0" }}>
       {/* Stats row */}
       <div
         style={{
@@ -61,7 +60,7 @@ export default function TrustBar() {
           margin: "0 auto",
           padding: "56px 28px 48px",
           display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
+          gridTemplateColumns: "repeat(3, 1fr)",
           gap: "0",
         }}
         className="stats-grid"
@@ -96,38 +95,35 @@ export default function TrustBar() {
         ))}
       </div>
 
-      {/* Divider */}
-      <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", margin: "0 28px 44px" }} />
+      {/* Awards strip — white background */}
+      <div style={{ background: "#ffffff", borderTop: "1px solid #e5e7eb", padding: "48px 28px" }}>
+        <p
+          style={{
+            textAlign: "center",
+            fontFamily: "var(--font-body)",
+            fontSize: "11px",
+            fontWeight: 600,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            color: "#9CA3AF",
+            marginBottom: "28px",
+          }}
+        >
+          Omaha Magazine's Best of Omaha — 7 Consecutive Years
+        </p>
 
-      {/* Award badges label */}
-      <p
-        style={{
-          textAlign: "center",
-          fontFamily: "var(--font-body)",
-          fontSize: "11px",
-          fontWeight: 600,
-          letterSpacing: "0.14em",
-          textTransform: "uppercase",
-          color: "rgba(255,255,255,0.35)",
-          marginBottom: "28px",
-        }}
-      >
-        Omaha Magazine's Best of Omaha — 7 Consecutive Years
-      </p>
-
-      {/* Award badges row */}
-      <div
-        style={{
-          maxWidth: "1280px",
-          margin: "0 auto",
-          padding: "0 28px",
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "24px",
-        }}
-      >
+        {/* Award badges row */}
+        <div
+          style={{
+            maxWidth: "1280px",
+            margin: "0 auto",
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "24px",
+          }}
+        >
         {AWARDS.map((award) => (
           <img
             key={award.alt}
@@ -150,6 +146,7 @@ export default function TrustBar() {
             }}
           />
         ))}
+        </div>
       </div>
 
       {/* Responsive */}

@@ -118,22 +118,7 @@ export default function Footer() {
               <span style={{ fontSize: "14px", color: "rgba(255,255,255,0.5)", fontFamily: "var(--font-body)" }}>
                 Omaha, NE &amp; Surrounding Areas
               </span>
-              <a
-                href="https://royaltyroofing.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  fontSize: "12px",
-                  color: "rgba(255,255,255,0.35)",
-                  fontFamily: "var(--font-body)",
-                  textDecoration: "underline",
-                  transition: "color 0.15s",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#3D6CC0")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.35)")}
-              >
-                royaltyroofing.org
-              </a>
+
             </div>
           </div>
         </div>

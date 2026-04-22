@@ -1,15 +1,14 @@
 /**
- * TeamBannerSection — "Local People. Real Accountability."
+ * TeamBannerSection — "Real People Who Work Locally All Year Round"
  * id="team"
- * - Light off-white bg (alternates with dark reviews section above)
+ * - Light off-white bg
  * - Bebas Neue headline, DM Sans body
- * - Correct CDN URLs for team photos
- * - Blue CTA, no gold
+ * - Large team photos filling the right column, no name labels
+ * - Blue CTA
  */
 
 const TEAM_1 = "/manus-storage/team-1_66735c42.webp";
 const TEAM_2 = "/manus-storage/team-2_e7e452e5.webp";
-const AERIAL = "/manus-storage/aerial-house_ed08c3f5.webp";
 
 export default function TeamBannerSection() {
   return (
@@ -17,18 +16,6 @@ export default function TeamBannerSection() {
       id="team"
       style={{ background: "#F5F5F3", padding: "96px 0", position: "relative", overflow: "hidden" }}
     >
-      {/* Subtle aerial bg */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: `url(${AERIAL})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 0.04,
-        }}
-      />
-
       <div
         style={{
           position: "relative",
@@ -62,15 +49,15 @@ export default function TeamBannerSection() {
           <h2
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: "clamp(44px, 5vw, 64px)",
+              fontSize: "clamp(40px, 4.5vw, 60px)",
               lineHeight: 0.95,
               color: "#0A1220",
               margin: "0 0 24px",
               letterSpacing: "0.01em",
             }}
           >
-            LOCAL PEOPLE.<br />
-            <span style={{ color: "#3D6CC0" }}>REAL ACCOUNTABILITY.</span>
+            REAL PEOPLE WHO WORK<br />
+            <span style={{ color: "#3D6CC0" }}>LOCALLY ALL YEAR ROUND.</span>
           </h2>
 
           <p
@@ -152,61 +139,43 @@ export default function TeamBannerSection() {
           </a>
         </div>
 
-        {/* RIGHT: Team photos */}
+        {/* RIGHT: Team photos — large, side by side, no labels */}
         <div
           style={{
-            display: "flex",
-            gap: "20px",
-            justifyContent: "center",
-            alignItems: "flex-start",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "16px",
+            alignItems: "stretch",
           }}
         >
-          {/* Photo 1 */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-            <div
-              style={{
-                width: "200px",
-                height: "250px",
-                borderRadius: "8px",
-                overflow: "hidden",
-                boxShadow: "0 12px 40px rgba(0,0,0,0.15)",
-                border: "3px solid white",
-              }}
-            >
-              <img
-                src={TEAM_1}
-                alt="AJ Velasquez — Owner, Royalty Roofing and Siding"
-                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }}
-              />
-            </div>
-            <div style={{ textAlign: "center" }}>
-              <p style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "15px", color: "#0A1220" }}>AJ Velasquez</p>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "13px", color: "#6B7280" }}>Owner</p>
-            </div>
+          <div
+            style={{
+              borderRadius: "10px",
+              overflow: "hidden",
+              boxShadow: "0 16px 48px rgba(0,0,0,0.18)",
+              aspectRatio: "3/4",
+            }}
+          >
+            <img
+              src={TEAM_1}
+              alt="AJ Velasquez — Owner, Royalty Roofing and Siding"
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }}
+            />
           </div>
-
-          {/* Photo 2 — offset */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "40px" }}>
-            <div
-              style={{
-                width: "200px",
-                height: "250px",
-                borderRadius: "8px",
-                overflow: "hidden",
-                boxShadow: "0 12px 40px rgba(0,0,0,0.15)",
-                border: "3px solid white",
-              }}
-            >
-              <img
-                src={TEAM_2}
-                alt="David Velasquez — Co-Owner, Royalty Roofing and Siding"
-                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }}
-              />
-            </div>
-            <div style={{ textAlign: "center" }}>
-              <p style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "15px", color: "#0A1220" }}>David Velasquez</p>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "13px", color: "#6B7280" }}>Co-Owner</p>
-            </div>
+          <div
+            style={{
+              borderRadius: "10px",
+              overflow: "hidden",
+              boxShadow: "0 16px 48px rgba(0,0,0,0.18)",
+              aspectRatio: "3/4",
+              marginTop: "48px",
+            }}
+          >
+            <img
+              src={TEAM_2}
+              alt="David Velasquez — Co-Owner, Royalty Roofing and Siding"
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }}
+            />
           </div>
         </div>
       </div>
