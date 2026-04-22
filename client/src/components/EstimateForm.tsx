@@ -1,6 +1,7 @@
 /**
  * EstimateForm — shared form used in HeroSection and BottomFormSection
  * Variant: "glass" (hero overlay) | "card" (white card on dark bg)
+ * Blue submit button (#3D6CC0), rounded-lg (8px), no gold
  */
 import { useState } from "react";
 import { CheckCircle, Loader2 } from "lucide-react";
@@ -47,16 +48,16 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
   const isGlass = variant === "glass";
 
   const inputClass = isGlass
-    ? "w-full px-3 py-2.5 rounded text-sm bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white/60 focus:bg-white/15 transition-all"
-    : "w-full px-3 py-2.5 rounded text-sm bg-white border border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all";
+    ? "w-full px-3 py-2.5 rounded-lg text-sm bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white/60 focus:bg-white/15 transition-all"
+    : "w-full px-3 py-2.5 rounded-lg text-sm bg-white border border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all";
 
   const labelClass = isGlass
     ? "block text-xs font-semibold text-white/80 mb-1"
     : "block text-xs font-semibold text-gray-700 mb-1";
 
   const selectClass = isGlass
-    ? "w-full px-3 py-2.5 rounded text-sm bg-white/10 border border-white/20 text-white focus:outline-none focus:border-white/60 transition-all appearance-none"
-    : "w-full px-3 py-2.5 rounded text-sm bg-white border border-gray-200 text-gray-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all appearance-none";
+    ? "w-full px-3 py-2.5 rounded-lg text-sm bg-white/10 border border-white/20 text-white focus:outline-none focus:border-white/60 transition-all appearance-none"
+    : "w-full px-3 py-2.5 rounded-lg text-sm bg-white border border-gray-200 text-gray-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all appearance-none";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
@@ -93,21 +94,22 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
       <div
         className="flex flex-col items-center justify-center text-center py-12 px-6 rounded-xl"
         style={{
-          background: isGlass ? "oklch(0.18 0.04 255 / 0.75)" : "white",
-          border: isGlass ? "1px solid oklch(1 0 0 / 0.15)" : "1px solid #e5e7eb",
+          background: isGlass ? "rgba(6,12,24,0.72)" : "white",
+          border: isGlass ? "1px solid rgba(255,255,255,0.15)" : "1px solid #e5e7eb",
+          backdropFilter: isGlass ? "blur(16px)" : undefined,
         }}
       >
         <CheckCircle className="mb-4 text-green-400" size={48} />
         <h3
           className="text-xl font-bold mb-2"
-          style={{ fontFamily: "var(--font-display)", color: isGlass ? "white" : "oklch(0.18 0.04 255)" }}
+          style={{ fontFamily: "var(--font-body)", color: isGlass ? "white" : "#0F1B2D" }}
         >
           We'll Be in Touch Soon!
         </h3>
         <p className={isGlass ? "text-white/80 text-sm" : "text-gray-600 text-sm"}>
           Thank you for reaching out. A member of our team will contact you within one business day.
         </p>
-        <p className={`mt-4 font-semibold ${isGlass ? "text-yellow-300" : "text-blue-700"}`}>
+        <p className="mt-4 font-semibold" style={{ color: isGlass ? "#fff" : "#3D6CC0" }}>
           Need immediate help? Call{" "}
           <a href="tel:4022168850" className="underline">
             (402) 216-8850
@@ -122,22 +124,22 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
       onSubmit={handleSubmit}
       className="rounded-xl overflow-hidden"
       style={{
-        background: isGlass ? "oklch(0.18 0.04 255 / 0.72)" : "white",
-        border: isGlass ? "1px solid oklch(1 0 0 / 0.18)" : "1px solid #e5e7eb",
+        background: isGlass ? "rgba(6,12,24,0.72)" : "white",
+        border: isGlass ? "1px solid rgba(255,255,255,0.18)" : "1px solid #e5e7eb",
         backdropFilter: isGlass ? "blur(16px)" : undefined,
-        boxShadow: isGlass ? "0 8px 32px oklch(0 0 0 / 0.4)" : "0 4px 24px oklch(0 0 0 / 0.08)",
+        boxShadow: isGlass ? "0 8px 32px rgba(0,0,0,0.4)" : "0 4px 24px rgba(0,0,0,0.08)",
       }}
     >
       {/* Form header */}
       <div
         className="px-5 pt-5 pb-4"
-        style={{ borderBottom: isGlass ? "1px solid oklch(1 0 0 / 0.1)" : "1px solid #f3f4f6" }}
+        style={{ borderBottom: isGlass ? "1px solid rgba(255,255,255,0.1)" : "1px solid #f3f4f6" }}
       >
         <h3
           className="text-lg font-bold"
           style={{
-            fontFamily: "var(--font-display)",
-            color: isGlass ? "white" : "oklch(0.18 0.04 255)",
+            fontFamily: "var(--font-body)",
+            color: isGlass ? "white" : "#0F1B2D",
           }}
         >
           Get Your Free Estimate
@@ -285,7 +287,7 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
                 href="https://royaltyroofing.org/privacy-policy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={isGlass ? "text-yellow-300 underline" : "text-blue-600 underline"}
+                style={{ color: "#3D6CC0", textDecoration: "underline" }}
               >
                 Privacy Policy
               </a>
@@ -294,18 +296,20 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
           </label>
         </div>
 
-        {/* Submit */}
+        {/* Submit — blue, rounded-lg */}
         <button
           type="submit"
           disabled={status === "loading"}
-          className="w-full flex items-center justify-center gap-2 font-bold text-base py-3.5 rounded-md transition-all"
+          className="w-full flex items-center justify-center gap-2 font-bold text-base py-3.5 rounded-lg transition-all"
           style={{
-            background: "oklch(0.75 0.14 80)",
-            color: "oklch(0.18 0.04 255)",
+            background: "#3D6CC0",
+            color: "#ffffff",
             fontFamily: "var(--font-body)",
+            border: "none",
+            cursor: status === "loading" ? "not-allowed" : "pointer",
           }}
-          onMouseEnter={(e) => { (e.target as HTMLButtonElement).style.filter = "brightness(1.08)"; }}
-          onMouseLeave={(e) => { (e.target as HTMLButtonElement).style.filter = ""; }}
+          onMouseEnter={(e) => { if (status !== "loading") (e.currentTarget as HTMLButtonElement).style.background = "#2d5aad"; }}
+          onMouseLeave={(e) => { if (status !== "loading") (e.currentTarget as HTMLButtonElement).style.background = "#3D6CC0"; }}
         >
           {status === "loading" ? (
             <><Loader2 size={18} className="animate-spin" /> Sending...</>

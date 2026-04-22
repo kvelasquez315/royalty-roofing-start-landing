@@ -1,15 +1,15 @@
 /**
  * HeroSection — Full-viewport hero
- * Dark navy overlay on house photo, headline left, form card right
- * Above-the-fold form is the #1 conversion best practice
+ * New copy: "Honest Roofing. Done Right, Every Time."
+ * Blue checkmarks, no gold, clean phone treatment
+ * Form card: glass on dark bg, blue submit button
  */
-import { Phone, ShieldCheck, Star, Trophy } from "lucide-react";
 import EstimateForm from "./EstimateForm";
 
 const TRUST_ITEMS = [
-  { icon: Star, text: "4.9 Stars — 500+ Google Reviews" },
-  { icon: Trophy, text: "Best of Omaha — 7 Consecutive Years" },
-  { icon: ShieldCheck, text: "Licensed, Insured & Family Owned Since 2010" },
+  "Free Inspection, No Obligation",
+  "Best of Omaha — 7 Years Running",
+  "We Handle Your Insurance Claim",
 ];
 
 export default function HeroSection() {
@@ -26,73 +26,94 @@ export default function HeroSection() {
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(105deg, oklch(0.12 0.04 255 / 0.92) 0%, oklch(0.15 0.05 255 / 0.82) 55%, oklch(0.12 0.04 255 / 0.65) 100%)",
+          background: "linear-gradient(105deg, rgba(15,27,45,0.92) 0%, rgba(15,27,45,0.82) 55%, rgba(15,27,45,0.65) 100%)",
         }}
       />
 
-      <div className="relative container mx-auto px-4 py-12 md:py-16">
+      <div
+        className="relative w-full px-6 py-16 md:py-20"
+        style={{ maxWidth: "1280px", margin: "0 auto" }}
+      >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-16 items-center">
           {/* Left: Headline + trust */}
           <div>
-            <div className="section-label-light mb-4 animate-fade-up">
-              Omaha's #1 Rated Roofing Company
+            <div
+              className="mb-4"
+              style={{
+                fontSize: "11px",
+                fontWeight: 600,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.55)",
+                fontFamily: "var(--font-body)",
+              }}
+            >
+              OMAHA'S TRUSTED ROOFER SINCE 2010
             </div>
 
             <h1
-              className="text-4xl sm:text-5xl xl:text-6xl font-black text-white leading-tight mb-5 animate-fade-up-delay-1"
-              style={{ fontFamily: "var(--font-display)" }}
+              style={{
+                fontSize: "clamp(36px, 5vw, 56px)",
+                fontWeight: 700,
+                color: "#ffffff",
+                lineHeight: 1.15,
+                marginBottom: "20px",
+                fontFamily: "var(--font-body)",
+              }}
             >
-              Your Roof Deserves
+              Honest Roofing.
               <br />
-              <span style={{ color: "oklch(0.75 0.14 80)" }}>Royal Treatment.</span>
+              Done Right, Every Time.
             </h1>
 
             <p
-              className="text-white/80 text-lg mb-8 max-w-lg leading-relaxed animate-fade-up-delay-2"
-              style={{ fontFamily: "var(--font-body)" }}
+              style={{
+                color: "rgba(255,255,255,0.75)",
+                fontSize: "18px",
+                lineHeight: 1.7,
+                marginBottom: "28px",
+                maxWidth: "520px",
+                fontFamily: "var(--font-body)",
+              }}
             >
-              Free estimates. No pressure. Just honest assessments from Omaha's most-awarded roofing and siding contractor — serving homeowners since 2010.
+              We've been roofing and siding Omaha homes since 2010. We tell you exactly what your roof needs — repair or full replacement — and we back every job with a written warranty. No pressure. No upsell.
             </p>
 
-            {/* Trust items */}
-            <div className="space-y-3 mb-8 animate-fade-up-delay-3">
-              {TRUST_ITEMS.map(({ icon: Icon, text }) => (
-                <div key={text} className="flex items-center gap-3">
-                  <div
-                    className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center"
-                    style={{ background: "oklch(0.45 0.15 255 / 0.5)", border: "1px solid oklch(1 0 0 / 0.2)" }}
-                  >
-                    <Icon size={15} className="text-yellow-300" />
-                  </div>
-                  <span className="text-white/90 text-sm font-medium" style={{ fontFamily: "var(--font-body)" }}>
-                    {text}
-                  </span>
+            {/* Trust row */}
+            <div
+              className="flex flex-col sm:flex-row sm:flex-wrap gap-3 mb-8"
+            >
+              {TRUST_ITEMS.map((item) => (
+                <div
+                  key={item}
+                  className="flex items-center gap-2"
+                  style={{ color: "rgba(255,255,255,0.9)", fontSize: "14px", fontWeight: 500, fontFamily: "var(--font-body)" }}
+                >
+                  {/* Blue checkmark SVG */}
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M3 8l3.5 3.5L13 4.5" stroke="#3D6CC0" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  {item}
                 </div>
               ))}
             </div>
 
-            {/* Phone CTA */}
+            {/* Clean phone treatment */}
             <a
               href="tel:4022168850"
-              className="inline-flex items-center gap-3 text-white group"
+              className="inline-flex items-center gap-2"
+              style={{
+                color: "#ffffff",
+                fontWeight: 600,
+                fontSize: "20px",
+                fontFamily: "var(--font-body)",
+                textDecoration: "none",
+              }}
             >
-              <div
-                className="w-12 h-12 rounded-full flex items-center justify-center transition-transform group-hover:scale-105"
-                style={{ background: "oklch(0.75 0.14 80)" }}
-              >
-                <Phone size={20} style={{ color: "oklch(0.18 0.04 255)" }} />
-              </div>
-              <div>
-                <div className="text-xs text-white/60 font-medium" style={{ fontFamily: "var(--font-body)" }}>
-                  Call or Text Anytime
-                </div>
-                <div
-                  className="text-2xl font-bold text-white"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  (402) 216-8850
-                </div>
-              </div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+              </svg>
+              (402) 216-8850
             </a>
           </div>
 

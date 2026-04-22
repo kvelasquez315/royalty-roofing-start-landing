@@ -1,113 +1,176 @@
 /**
- * HonestAssessmentSection — "Why Royalty" differentiator section
- * Off-white background, 2-col layout: text left, aerial house photo right
+ * HonestAssessmentSection — "Why Royalty" differentiator
+ * id="why-royalty"
+ * bg-[#F7F7F5], editorial proof blocks (no icon-in-circle), no floating badge
+ * Blue CTA, DM Sans 700 headlines
  */
-import { CheckCircle } from "lucide-react";
 
-const POINTS = [
+const PROOF_BLOCKS = [
   {
-    title: "Honest Assessments — Not Sales Pitches",
-    body: "We'll tell you exactly what your roof needs — even if that means telling you it doesn't need replacement yet. Our inspectors work for you, not a commission.",
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3D6CC0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+      </svg>
+    ),
+    label: "We handle small repairs — not just big replacements",
+    desc: "No job is too small. If a repair is the right call, that's what we recommend.",
   },
   {
-    title: "Insurance Claim Experts",
-    body: "Storm damage? We've helped hundreds of Omaha homeowners navigate the insurance process. We work directly with your adjuster so you get what you're owed.",
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3D6CC0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+    ),
+    label: "Free inspection with full photo documentation",
+    desc: "We document everything and give you a clear written assessment.",
   },
   {
-    title: "Workmanship Warranty on Every Job",
-    body: "Every roof and siding installation comes with our written workmanship warranty on top of manufacturer material warranties. We stand behind our work.",
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3D6CC0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+      </svg>
+    ),
+    label: "Insurance claim guidance from start to finish",
+    desc: "We work directly with adjusters and have former claims professionals on staff.",
   },
 ];
 
 export default function HonestAssessmentSection() {
+  const scrollToForm = () => {
+    document.getElementById("bottom-form")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section style={{ background: "oklch(0.97 0.005 80)" }}>
-      <div className="container mx-auto px-4 py-16 md:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section id="why-royalty" style={{ background: "#F7F7F5", padding: "80px 0 112px" }}>
+      <div
+        className="w-full px-6"
+        style={{ maxWidth: "1280px", margin: "0 auto" }}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Text */}
           <div>
-            <div className="section-label mb-4">Why Royalty?</div>
+            <div
+              className="mb-4"
+              style={{
+                color: "#3D6CC0",
+                fontSize: "11px",
+                fontWeight: 600,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                fontFamily: "var(--font-body)",
+              }}
+            >
+              WHY HOMEOWNERS CHOOSE ROYALTY
+            </div>
+
             <h2
-              className="text-3xl md:text-4xl font-black text-navy mb-6 leading-tight"
-              style={{ fontFamily: "var(--font-display)", color: "oklch(0.18 0.04 255)" }}
+              style={{
+                fontSize: "clamp(28px, 3.5vw, 40px)",
+                fontWeight: 700,
+                color: "#0F1B2D",
+                lineHeight: 1.25,
+                marginBottom: "24px",
+                fontFamily: "var(--font-body)",
+              }}
             >
-              We Treat Your Home
-              <br />Like It's Our Own.
+              We Only Recommend What Your Roof Actually Needs.
             </h2>
+
             <p
-              className="text-gray-600 mb-8 leading-relaxed"
-              style={{ fontFamily: "var(--font-body)" }}
+              style={{
+                color: "#6B7280",
+                lineHeight: 1.7,
+                marginBottom: "16px",
+                fontFamily: "var(--font-body)",
+                fontSize: "16px",
+              }}
             >
-              Royalty Roofing and Siding has been Omaha's most trusted roofing contractor since 2010. We're not a storm-chasing company — we're your neighbors, and we'll be here long after the job is done.
+              Most roofing companies push replacements. We don't. If your roof can be repaired, we'll tell you that — and do the repair right. If it needs a full replacement, we'll explain exactly why. You get a straight answer, not a sales pitch.
             </p>
 
-            <div className="space-y-6">
-              {POINTS.map(({ title, body }) => (
-                <div key={title} className="flex gap-4">
-                  <CheckCircle
-                    size={22}
-                    className="shrink-0 mt-0.5"
-                    style={{ color: "oklch(0.45 0.15 255)" }}
-                  />
+            <p
+              style={{
+                color: "#6B7280",
+                lineHeight: 1.7,
+                marginBottom: "40px",
+                fontFamily: "var(--font-body)",
+                fontSize: "16px",
+              }}
+            >
+              We're not a storm-chasing crew that rolls in after a hailstorm and disappears. Royalty has been rooted in Omaha since 2010. When you call us, you talk to someone who lives here.
+            </p>
+
+            {/* Editorial proof blocks */}
+            <div style={{ marginBottom: "40px" }}>
+              {PROOF_BLOCKS.map(({ icon, label, desc }) => (
+                <div
+                  key={label}
+                  className="flex gap-3"
+                  style={{ marginBottom: "24px" }}
+                >
+                  <div className="shrink-0 mt-0.5">{icon}</div>
                   <div>
-                    <h3
-                      className="font-bold text-base mb-1"
-                      style={{ fontFamily: "var(--font-body)", color: "oklch(0.18 0.04 255)" }}
+                    <div
+                      style={{
+                        color: "#0F1B2D",
+                        fontWeight: 600,
+                        fontSize: "14px",
+                        fontFamily: "var(--font-body)",
+                        marginBottom: "4px",
+                      }}
                     >
-                      {title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
-                      {body}
-                    </p>
+                      {label}
+                    </div>
+                    <div
+                      style={{
+                        color: "#6B7280",
+                        fontSize: "14px",
+                        fontFamily: "var(--font-body)",
+                        lineHeight: 1.6,
+                      }}
+                    >
+                      {desc}
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-10">
-              <a
-                href="#estimate-form"
-                className="btn-primary"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById("estimate-form")?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                Get My Free Estimate
-              </a>
-            </div>
+            <button
+              onClick={scrollToForm}
+              className="inline-flex items-center"
+              style={{
+                background: "#3D6CC0",
+                color: "#fff",
+                fontWeight: 600,
+                fontSize: "14px",
+                padding: "12px 24px",
+                borderRadius: "8px",
+                border: "none",
+                cursor: "pointer",
+                fontFamily: "var(--font-body)",
+                transition: "background 0.15s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.background = "#2d5aad")}
+              onMouseLeave={(e) => (e.currentTarget.style.background = "#3D6CC0")}
+            >
+              Schedule a Free Inspection
+            </button>
           </div>
 
-          {/* Right: Photo */}
-          <div className="relative">
-            <div
-              className="rounded-2xl overflow-hidden"
-              style={{ boxShadow: "0 20px 60px oklch(0 0 0 / 0.15)" }}
-            >
-              <img
-                src="/manus-storage/hero-bg_350164c4.webp"
-                alt="Aerial view of completed Royalty Roofing project in Omaha"
-                className="w-full h-80 md:h-96 object-cover"
-              />
-            </div>
-            {/* Floating badge */}
-            <div
-              className="absolute -bottom-5 -left-5 rounded-xl px-5 py-4 shadow-xl"
-              style={{ background: "oklch(0.18 0.04 255)" }}
-            >
-              <div
-                className="text-2xl font-black text-white"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                15+ Years
-              </div>
-              <div
-                className="text-xs font-medium mt-0.5"
-                style={{ color: "oklch(0.7 0.1 255)", fontFamily: "var(--font-body)" }}
-              >
-                Serving Omaha Homeowners
-              </div>
-            </div>
+          {/* Right: Photo — no floating badge */}
+          <div>
+            <img
+              src="/manus-storage/hero-bg_350164c4.webp"
+              alt="Royalty Roofing crew completing a residential roofing project in Omaha"
+              style={{
+                width: "100%",
+                height: "480px",
+                objectFit: "cover",
+                borderRadius: "12px",
+                boxShadow: "0 12px 40px rgba(0,0,0,0.12)",
+              }}
+            />
           </div>
         </div>
       </div>

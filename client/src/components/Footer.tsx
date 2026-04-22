@@ -1,6 +1,6 @@
 /**
  * Footer — 3-column: logo+tagline, services, contact
- * Dark navy, minimal, trust-reinforcing
+ * No gold/yellow anywhere, blue hover states on links
  */
 export default function Footer() {
   const services = [
@@ -13,20 +13,26 @@ export default function Footer() {
   ];
 
   return (
-    <footer style={{ background: "oklch(0.13 0.03 255)", borderTop: "1px solid oklch(1 0 0 / 0.08)" }}>
-      <div className="container mx-auto px-4 py-12">
+    <footer style={{ background: "#080f1a", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+      <div
+        className="w-full px-6 py-12"
+        style={{ maxWidth: "1280px", margin: "0 auto" }}
+      >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Col 1: Logo + tagline */}
           <div>
             <img
               src="/manus-storage/logo_5194693c.png"
               alt="Royalty Roofing and Siding"
-              className="h-12 w-auto mb-4"
-              style={{ filter: "brightness(0) invert(1)" }}
+              style={{ height: "40px", width: "auto", marginBottom: "16px", filter: "brightness(0) invert(1)" }}
             />
             <p
-              className="text-sm leading-relaxed"
-              style={{ color: "oklch(0.6 0.03 255)", fontFamily: "var(--font-body)" }}
+              style={{
+                fontSize: "14px",
+                lineHeight: 1.7,
+                color: "rgba(255,255,255,0.45)",
+                fontFamily: "var(--font-body)",
+              }}
             >
               Omaha's most trusted roofing and siding contractor since 2010. Family owned. Best of Omaha winner 7 consecutive years.
             </p>
@@ -35,17 +41,27 @@ export default function Footer() {
           {/* Col 2: Services */}
           <div>
             <h4
-              className="text-xs font-semibold tracking-widest uppercase mb-4"
-              style={{ color: "oklch(0.6 0.03 255)", fontFamily: "var(--font-body)" }}
+              style={{
+                fontSize: "11px",
+                fontWeight: 600,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.4)",
+                fontFamily: "var(--font-body)",
+                marginBottom: "16px",
+              }}
             >
               Services
             </h4>
-            <ul className="space-y-2">
+            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               {services.map((s) => (
-                <li key={s}>
+                <li key={s} style={{ marginBottom: "8px" }}>
                   <span
-                    className="text-sm"
-                    style={{ color: "oklch(0.75 0.03 255)", fontFamily: "var(--font-body)" }}
+                    style={{
+                      fontSize: "14px",
+                      color: "rgba(255,255,255,0.55)",
+                      fontFamily: "var(--font-body)",
+                    }}
                   >
                     {s}
                   </span>
@@ -57,75 +73,104 @@ export default function Footer() {
           {/* Col 3: Contact */}
           <div>
             <h4
-              className="text-xs font-semibold tracking-widest uppercase mb-4"
-              style={{ color: "oklch(0.6 0.03 255)", fontFamily: "var(--font-body)" }}
+              style={{
+                fontSize: "11px",
+                fontWeight: 600,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.4)",
+                fontFamily: "var(--font-body)",
+                marginBottom: "16px",
+              }}
             >
               Contact
             </h4>
-            <div className="space-y-3">
-              <div>
-                <a
-                  href="tel:4022168850"
-                  className="text-white font-semibold text-lg hover:text-yellow-300 transition-colors"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  (402) 216-8850
-                </a>
-              </div>
-              <div>
-                <a
-                  href="mailto:info@royaltyroofing.org"
-                  className="text-sm hover:text-white transition-colors"
-                  style={{ color: "oklch(0.65 0.05 255)", fontFamily: "var(--font-body)" }}
-                >
-                  info@royaltyroofing.org
-                </a>
-              </div>
-              <div>
-                <span
-                  className="text-sm"
-                  style={{ color: "oklch(0.65 0.05 255)", fontFamily: "var(--font-body)" }}
-                >
-                  Omaha, NE &amp; Surrounding Areas
-                </span>
-              </div>
-              <div className="pt-2">
-                <a
-                  href="https://royaltyroofing.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs hover:text-white transition-colors underline"
-                  style={{ color: "oklch(0.55 0.05 255)", fontFamily: "var(--font-body)" }}
-                >
-                  royaltyroofing.org
-                </a>
-              </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              <a
+                href="tel:4022168850"
+                style={{
+                  color: "#ffffff",
+                  fontWeight: 600,
+                  fontSize: "20px",
+                  fontFamily: "var(--font-body)",
+                  textDecoration: "none",
+                  transition: "color 0.15s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#3D6CC0")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#ffffff")}
+              >
+                (402) 216-8850
+              </a>
+              <a
+                href="mailto:info@royaltyroofing.org"
+                style={{
+                  fontSize: "14px",
+                  color: "rgba(255,255,255,0.5)",
+                  fontFamily: "var(--font-body)",
+                  textDecoration: "none",
+                  transition: "color 0.15s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#3D6CC0")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
+              >
+                info@royaltyroofing.org
+              </a>
+              <span style={{ fontSize: "14px", color: "rgba(255,255,255,0.5)", fontFamily: "var(--font-body)" }}>
+                Omaha, NE &amp; Surrounding Areas
+              </span>
+              <a
+                href="https://royaltyroofing.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  fontSize: "12px",
+                  color: "rgba(255,255,255,0.35)",
+                  fontFamily: "var(--font-body)",
+                  textDecoration: "underline",
+                  transition: "color 0.15s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#3D6CC0")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.35)")}
+              >
+                royaltyroofing.org
+              </a>
             </div>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div
-          className="mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3"
-          style={{ borderTop: "1px solid oklch(1 0 0 / 0.06)" }}
+          style={{
+            marginTop: "40px",
+            paddingTop: "24px",
+            borderTop: "1px solid rgba(255,255,255,0.06)",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "12px",
+          }}
         >
-          <p
-            className="text-xs"
-            style={{ color: "oklch(0.45 0.02 255)", fontFamily: "var(--font-body)" }}
-          >
+          <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.3)", fontFamily: "var(--font-body)" }}>
             &copy; {new Date().getFullYear()} Royalty Roofing and Siding. All rights reserved.
           </p>
-          <div className="flex gap-4">
-            <a
-              href="https://royaltyroofing.org/privacy-policy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs hover:text-white transition-colors"
-              style={{ color: "oklch(0.45 0.02 255)", fontFamily: "var(--font-body)" }}
-            >
-              Privacy Policy
-            </a>
-          </div>
+          <a
+            href="https://royaltyroofing.org/privacy-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontSize: "12px",
+              color: "rgba(255,255,255,0.3)",
+              fontFamily: "var(--font-body)",
+              textDecoration: "none",
+              transition: "color 0.15s",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#3D6CC0")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.3)")}
+          >
+            Privacy Policy
+          </a>
         </div>
       </div>
     </footer>

@@ -1,17 +1,18 @@
 /**
  * Home — Royalty Roofing Google Ads Landing Page
- * Design: Premium Conversion Machine
- * Palette: Navy (#0F1B2D) + Royal Blue (#3D6CC0) + Gold + Off-white
- * Fonts: Barlow (display) + DM Sans (body)
+ * Design: Premium Conversion Machine (revised)
+ * Palette: Navy (#0F1B2D) + Royal Blue (#3D6CC0) + Off-white (#F7F7F5)
+ * Fonts: DM Sans 400/500/600/700/800 throughout — no condensed typefaces
+ * No gold/yellow anywhere (only #F59E0B for star icons)
  *
  * Section order (conversion-optimized):
- * 1. Navbar (fixed, sticky phone + CTA)
- * 2. HeroSection (full-viewport, above-the-fold form)
- * 3. TrustBar (stats + 7 award badges)
- * 4. HonestAssessmentSection (differentiator)
- * 5. ReviewsSection (social proof grid)
- * 6. TeamBannerSection (local accountability)
- * 7. BottomFormSection (second conversion point, id="estimate-form")
+ * 1. Navbar (fixed, anchor nav, blue CTA)
+ * 2. HeroSection (full-viewport, above-the-fold form, new copy)
+ * 3. TrustBar (stats + 7 award badges, dark bg flush)
+ * 4. HonestAssessmentSection (id=why-royalty, editorial proof blocks)
+ * 5. ReviewsSection (id=reviews, SVG stars, Google G mark)
+ * 6. TeamBannerSection (id=team, blue CTA)
+ * 7. BottomFormSection (id=bottom-form, blue submit)
  * 8. Footer
  */
 import BottomFormSection from "@/components/BottomFormSection";
