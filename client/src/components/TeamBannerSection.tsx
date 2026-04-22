@@ -56,8 +56,8 @@ export default function TeamBannerSection() {
               letterSpacing: "0.01em",
             }}
           >
-            REAL PEOPLE WHO WORK<br />
-            <span style={{ color: "#3D6CC0" }}>LOCALLY ALL YEAR ROUND.</span>
+            WE'RE AN OMAHA-BASED TEAM THAT LIVES AND WORKS HERE<br />
+            <span style={{ color: "#3D6CC0" }}>ALL YEAR ROUND.</span>
           </h2>
 
           <p
@@ -139,21 +139,21 @@ export default function TeamBannerSection() {
           </a>
         </div>
 
-        {/* RIGHT: Team photos — large, side by side, no labels */}
+        {/* RIGHT: Team photos — equal side by side, no overlap, no offset */}
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            gap: "16px",
-            alignItems: "stretch",
+            gap: "20px",
+            alignItems: "start",
           }}
         >
           <div
             style={{
               borderRadius: "10px",
               overflow: "hidden",
-              boxShadow: "0 16px 48px rgba(0,0,0,0.18)",
-              aspectRatio: "3/4",
+              boxShadow: "0 12px 40px rgba(0,0,0,0.15)",
+              aspectRatio: "2/3",
             }}
           >
             <img
@@ -166,9 +166,8 @@ export default function TeamBannerSection() {
             style={{
               borderRadius: "10px",
               overflow: "hidden",
-              boxShadow: "0 16px 48px rgba(0,0,0,0.18)",
-              aspectRatio: "3/4",
-              marginTop: "48px",
+              boxShadow: "0 12px 40px rgba(0,0,0,0.15)",
+              aspectRatio: "2/3",
             }}
           >
             <img

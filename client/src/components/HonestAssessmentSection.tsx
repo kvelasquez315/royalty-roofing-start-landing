@@ -75,8 +75,8 @@ export default function HonestAssessmentSection() {
               letterSpacing: "0.01em",
             }}
           >
-            WE INSPECT. WE REPAIR.<br />
-            <span style={{ color: "#3D6CC0" }}>WE TELL YOU THE TRUTH.</span>
+            WE COME TO YOUR HOME, GET ON YOUR ROOF, AND GIVE YOU A STRAIGHT ANSWER ON WHAT IT<br />
+            <span style={{ color: "#3D6CC0" }}>ACTUALLY NEEDS.</span>
           </h2>
 
           {/* Body copy */}

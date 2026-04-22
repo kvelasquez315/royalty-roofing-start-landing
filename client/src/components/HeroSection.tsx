@@ -100,9 +100,8 @@ export default function HeroSection() {
               letterSpacing: "0.01em",
             }}
           >
-            FREE ROOF<br />
-            INSPECTION.<br />
-            <span style={{ color: "#3D6CC0" }}>HONEST ANSWERS.</span>
+            WE INSPECT YOUR ROOF FOR FREE AND ONLY RECOMMEND<br />
+            <span style={{ color: "#3D6CC0" }}>A REPLACEMENT IF YOU TRULY NEED ONE.</span>
           </h1>
 
           {/* Sub-copy */}
@@ -117,7 +116,7 @@ export default function HeroSection() {
               marginBottom: "28px",
             }}
           >
-            We get on your roof, document everything with photos, and tell you exactly what it needs — repair or replacement. No pressure, no upsell. Omaha's most trusted roofer since 2010.
+            Most roofers show up and quote a full replacement. We get on your roof, document everything with photos, and give you an honest written assessment — if a repair will do the job, that's what we'll recommend. Omaha's most trusted roofer since 2010.
           </p>
 
           {/* Trust badge cluster */}

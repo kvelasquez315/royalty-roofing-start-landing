@@ -52,9 +52,8 @@ export default function BottomFormSection() {
               letterSpacing: "0.01em",
             }}
           >
-            SCHEDULE YOUR<br />
-            FREE INSPECTION<br />
-            <span style={{ color: "#3D6CC0" }}>TODAY.</span>
+            SCHEDULE YOUR FREE ROOF INSPECTION AND GET AN HONEST<br />
+            <span style={{ color: "#3D6CC0" }}>WRITTEN ASSESSMENT TODAY.</span>
           </h2>
 
           <p
