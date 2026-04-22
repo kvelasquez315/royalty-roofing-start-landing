@@ -22,9 +22,9 @@ export default function Footer() {
           {/* Col 1: Logo + tagline */}
           <div>
             <img
-              src="/manus-storage/logo_5194693c.png"
+              src="/manus-storage/logo-white_d1fb2924.png"
               alt="Royalty Roofing and Siding"
-              style={{ height: "40px", width: "auto", marginBottom: "16px", filter: "brightness(0) invert(1)" }}
+              style={{ height: "40px", width: "auto", marginBottom: "16px" }}
             />
             <p
               style={{

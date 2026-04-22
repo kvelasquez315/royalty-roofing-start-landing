@@ -1,7 +1,10 @@
 /**
- * BottomFormSection — Second conversion point
+ * BottomFormSection — Primary conversion point
  * id="bottom-form"
- * Navy bg, clean phone (no gold bubble), blue checkmarks, blue submit button
+ * - Dark navy (#0A1220) bg
+ * - Bebas Neue large headline, DM Sans body
+ * - Large phone number, trust checklist, form card
+ * - No gold
  */
 import EstimateForm from "./EstimateForm";
 
@@ -9,108 +12,139 @@ export default function BottomFormSection() {
   return (
     <section
       id="bottom-form"
-      style={{ background: "#0F1B2D", padding: "80px 0 112px" }}
+      style={{ background: "#0A1220", padding: "96px 0" }}
     >
       <div
-        className="w-full px-6"
-        style={{ maxWidth: "1280px", margin: "0 auto" }}
+        style={{
+          maxWidth: "1280px",
+          margin: "0 auto",
+          padding: "0 28px",
+          display: "grid",
+          gridTemplateColumns: "1fr 480px",
+          gap: "64px",
+          alignItems: "start",
+        }}
+        className="bottom-form-grid"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Left: Context */}
-          <div className="pt-2">
-            <div
-              className="mb-4"
-              style={{
-                color: "rgba(255,255,255,0.45)",
-                fontSize: "11px",
-                fontWeight: 600,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                fontFamily: "var(--font-body)",
-              }}
-            >
-              GET YOUR FREE ESTIMATE
-            </div>
-            <h2
-              style={{
-                fontSize: "clamp(28px, 3.5vw, 40px)",
-                fontWeight: 700,
-                color: "#ffffff",
-                lineHeight: 1.25,
-                marginBottom: "20px",
-                fontFamily: "var(--font-body)",
-              }}
-            >
-              Serving Omaha
-              <br />Since 2010.
-            </h2>
-            <p
-              style={{
-                color: "rgba(255,255,255,0.65)",
-                lineHeight: 1.7,
-                marginBottom: "32px",
-                fontFamily: "var(--font-body)",
-                fontSize: "16px",
-              }}
-            >
-              Free consultation. No obligation. Response within one business day. We'll come to your home, inspect your roof or siding, and give you an honest assessment — no pressure, no upsell.
-            </p>
+        {/* LEFT: Context */}
+        <div style={{ paddingTop: "8px" }}>
+          <p
+            style={{
+              fontFamily: "var(--font-body)",
+              fontWeight: 600,
+              fontSize: "11px",
+              letterSpacing: "0.16em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.4)",
+              marginBottom: "14px",
+            }}
+          >
+            Get Your Free Estimate
+          </p>
 
-            {/* Clean phone treatment */}
-            <a
-              href="tel:4022168850"
-              className="flex items-center gap-2 mb-8"
-              style={{
-                color: "#ffffff",
-                fontWeight: 700,
-                fontSize: "28px",
-                fontFamily: "var(--font-body)",
-                textDecoration: "none",
-              }}
-            >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
-              </svg>
-              (402) 216-8850
-            </a>
+          <h2
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(48px, 5.5vw, 72px)",
+              lineHeight: 0.93,
+              color: "white",
+              margin: "0 0 24px",
+              letterSpacing: "0.01em",
+            }}
+          >
+            READY TO GET<br />
+            STARTED?<br />
+            <span style={{ color: "#3D6CC0" }}>LET'S TALK.</span>
+          </h2>
 
-            {/* Trust checklist with blue checkmarks */}
-            <ul>
-              {[
-                "Family Owned Since 2010",
-                "Best of Omaha — 7 Consecutive Years",
-                "4.9 Stars on Google (500+ Reviews)",
-                "Licensed & Insured in Nebraska",
-                "Workmanship Warranty on Every Job",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="flex items-center gap-3"
-                  style={{ marginBottom: "12px" }}
-                >
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M3 8l3.5 3.5L13 4.5" stroke="#3D6CC0" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  <span
-                    style={{
-                      color: "rgba(255,255,255,0.75)",
-                      fontSize: "14px",
-                      fontFamily: "var(--font-body)",
-                    }}
-                  >
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <p
+            style={{
+              fontFamily: "var(--font-body)",
+              fontSize: "16px",
+              color: "rgba(255,255,255,0.65)",
+              lineHeight: 1.75,
+              marginBottom: "32px",
+              maxWidth: "480px",
+            }}
+          >
+            Free consultation. No obligation. We'll come to your home, inspect your roof or siding, and give you an honest assessment — no pressure, no upsell. Response within one business day.
+          </p>
 
-          {/* Right: Form */}
+          {/* Big phone number */}
+          <a
+            href="tel:4022168850"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "12px",
+              color: "white",
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(32px, 3.5vw, 44px)",
+              textDecoration: "none",
+              marginBottom: "36px",
+              letterSpacing: "0.02em",
+              transition: "color 0.15s",
+            }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#3D6CC0"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "white"; }}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            (402) 216-8850
+          </a>
+
+          {/* Trust checklist */}
           <div>
-            <EstimateForm variant="card" />
+            {[
+              "Family Owned & Operated Since 2010",
+              "Best of Omaha — 7 Consecutive Years",
+              "4.9 Stars on Google (500+ Reviews)",
+              "Licensed & Insured in Nebraska",
+              "Workmanship Warranty on Every Job",
+            ].map((item) => (
+              <div
+                key={item}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "12px",
+                  marginBottom: "14px",
+                }}
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 8l3.5 3.5L13 4.5" stroke="#3D6CC0" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <span
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "15px",
+                    color: "rgba(255,255,255,0.72)",
+                    fontWeight: 500,
+                  }}
+                >
+                  {item}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
+
+        {/* RIGHT: Form */}
+        <div>
+          <EstimateForm variant="card" />
+        </div>
       </div>
+
+      {/* Responsive */}
+      <style>{`
+        @media (max-width: 900px) {
+          .bottom-form-grid {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

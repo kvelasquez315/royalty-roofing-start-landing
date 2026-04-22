@@ -1,8 +1,9 @@
 /**
  * ReviewsSection — 5 real Google reviews
  * id="reviews"
- * SVG stars (#F59E0B), Google G mark, white cards with border, text link CTA
- * DM Sans 700 headline, no condensed font
+ * - Dark navy bg for contrast alternation
+ * - Bebas Neue headline, DM Sans body
+ * - White cards, SVG stars, Google G mark, text link CTA
  */
 import { ExternalLink } from "lucide-react";
 
@@ -36,7 +37,7 @@ const REVIEWS = [
 
 function SVGStars({ count }: { count: number }) {
   return (
-    <div className="flex gap-0.5" style={{ marginBottom: "12px" }}>
+    <div style={{ display: "flex", gap: "3px", marginBottom: "14px" }}>
       {Array.from({ length: count }).map((_, i) => (
         <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B">
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -59,90 +60,86 @@ function GoogleGMark() {
 
 export default function ReviewsSection() {
   return (
-    <section id="reviews" style={{ background: "#ffffff", padding: "80px 0 112px" }}>
-      <div
-        className="w-full px-6"
-        style={{ maxWidth: "1280px", margin: "0 auto" }}
-      >
+    <section id="reviews" style={{ background: "#0A1220", padding: "96px 0" }}>
+      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 28px" }}>
         {/* Header */}
-        <div className="text-center mb-12">
-          <div
-            className="mb-3"
+        <div style={{ textAlign: "center", marginBottom: "56px" }}>
+          <p
             style={{
-              color: "#3D6CC0",
-              fontSize: "11px",
-              fontWeight: 600,
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
               fontFamily: "var(--font-body)",
+              fontWeight: 600,
+              fontSize: "11px",
+              letterSpacing: "0.16em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.45)",
+              marginBottom: "14px",
             }}
           >
-            WHAT OMAHA HOMEOWNERS SAY
-          </div>
+            What Omaha Homeowners Say
+          </p>
           <h2
             style={{
-              fontSize: "clamp(28px, 3.5vw, 40px)",
-              fontWeight: 700,
-              color: "#0F1B2D",
-              lineHeight: 1.25,
-              fontFamily: "var(--font-body)",
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(44px, 5vw, 64px)",
+              lineHeight: 0.95,
+              color: "white",
+              letterSpacing: "0.01em",
             }}
           >
-            4.9 Stars. 500+ Reviews. Here's Why.
+            4.9 STARS. 500+ REVIEWS.<br />
+            <span style={{ color: "#3D6CC0" }}>HERE'S WHY.</span>
           </h2>
         </div>
 
         {/* Reviews grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {REVIEWS.map((review) => (
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "20px",
+          }}
+          className="reviews-grid"
+        >
+          {REVIEWS.map((review, i) => (
             <div
               key={review.name}
-              className="flex flex-col"
               style={{
                 background: "#ffffff",
-                border: "1px solid #E5E7EB",
-                borderRadius: "12px",
-                padding: "24px",
-                boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
-                transition: "box-shadow 0.2s",
+                borderRadius: "8px",
+                padding: "28px",
+                display: "flex",
+                flexDirection: "column",
+                gridColumn: i === 4 ? "3 / 4" : undefined,
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 4px 16px rgba(0,0,0,0.1)")}
-              onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "0 1px 3px rgba(0,0,0,0.06)")}
             >
               <SVGStars count={review.stars} />
               <p
-                className="flex-1"
                 style={{
+                  fontFamily: "var(--font-body)",
                   color: "#374151",
                   fontSize: "14px",
-                  lineHeight: 1.7,
-                  fontFamily: "var(--font-body)",
-                  marginBottom: "16px",
+                  lineHeight: 1.75,
+                  flex: 1,
+                  marginBottom: "20px",
                 }}
               >
-                {review.text}
+                "{review.text}"
               </p>
               <div>
-                <div
+                <p
                   style={{
-                    fontWeight: 600,
-                    fontSize: "14px",
-                    color: "#0F1B2D",
                     fontFamily: "var(--font-body)",
+                    fontWeight: 700,
+                    fontSize: "14px",
+                    color: "#0A1220",
                     marginBottom: "4px",
                   }}
                 >
                   {review.name}
-                </div>
-                <div className="flex items-center gap-1.5">
+                </p>
+                <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
                   <GoogleGMark />
-                  <span
-                    style={{
-                      color: "#6B7280",
-                      fontSize: "12px",
-                      fontFamily: "var(--font-body)",
-                    }}
-                  >
+                  <span style={{ fontFamily: "var(--font-body)", color: "#9CA3AF", fontSize: "12px" }}>
                     Google Review
                   </span>
                 </div>
@@ -151,29 +148,45 @@ export default function ReviewsSection() {
           ))}
         </div>
 
-        {/* Text link CTA */}
-        <div className="text-center mt-10">
+        {/* CTA */}
+        <div style={{ textAlign: "center", marginTop: "40px" }}>
           <a
             href="https://www.google.com/search?q=Royalty+Roofing+and+Siding+Omaha+reviews"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2"
             style={{
-              color: "#3D6CC0",
-              fontWeight: 600,
-              fontSize: "14px",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
+              color: "rgba(255,255,255,0.6)",
               fontFamily: "var(--font-body)",
+              fontWeight: 500,
+              fontSize: "14px",
               textDecoration: "none",
-              textUnderlineOffset: "2px",
+              transition: "color 0.15s",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.textDecoration = "underline")}
-            onMouseLeave={(e) => (e.currentTarget.style.textDecoration = "none")}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "white"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.6)"; }}
           >
             <ExternalLink size={14} />
             Read More Reviews on Google
           </a>
         </div>
       </div>
+
+      {/* Responsive */}
+      <style>{`
+        @media (max-width: 900px) {
+          .reviews-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+        @media (min-width: 640px) and (max-width: 900px) {
+          .reviews-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

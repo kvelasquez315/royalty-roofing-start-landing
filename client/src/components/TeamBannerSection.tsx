@@ -1,200 +1,225 @@
 /**
  * TeamBannerSection — "Local People. Real Accountability."
  * id="team"
- * Dark navy bg, aerial photo overlay, team headshots
- * Blue CTA button (no gold), DM Sans 700 headline
+ * - Light off-white bg (alternates with dark reviews section above)
+ * - Bebas Neue headline, DM Sans body
+ * - Correct CDN URLs for team photos
+ * - Blue CTA, no gold
  */
+
+const TEAM_1 = "/manus-storage/team-1_66735c42.webp";
+const TEAM_2 = "/manus-storage/team-2_e7e452e5.webp";
+const AERIAL = "/manus-storage/aerial-house_ed08c3f5.webp";
+
 export default function TeamBannerSection() {
   return (
     <section
       id="team"
-      className="relative overflow-hidden"
-      style={{ background: "#0F1B2D" }}
+      style={{ background: "#F5F5F3", padding: "96px 0", position: "relative", overflow: "hidden" }}
     >
-      {/* Background photo with overlay */}
+      {/* Subtle aerial bg */}
       <div
-        className="absolute inset-0"
         style={{
-          backgroundImage: "url(/manus-storage/aerial-house_c55adca7.webp)",
+          position: "absolute",
+          inset: 0,
+          backgroundImage: `url(${AERIAL})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          opacity: 0.12,
+          opacity: 0.04,
         }}
       />
 
       <div
-        className="relative w-full px-6 py-20 lg:py-28"
-        style={{ maxWidth: "1280px", margin: "0 auto" }}
+        style={{
+          position: "relative",
+          zIndex: 1,
+          maxWidth: "1280px",
+          margin: "0 auto",
+          padding: "0 28px",
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: "64px",
+          alignItems: "center",
+        }}
+        className="team-grid"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left: Text */}
-          <div>
-            <div
-              className="mb-4"
-              style={{
-                color: "rgba(255,255,255,0.45)",
-                fontSize: "11px",
-                fontWeight: 600,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                fontFamily: "var(--font-body)",
-              }}
-            >
-              THE ROYALTY TEAM
-            </div>
-            <h2
-              style={{
-                fontSize: "clamp(28px, 3.5vw, 40px)",
-                fontWeight: 700,
-                color: "#ffffff",
-                lineHeight: 1.25,
-                marginBottom: "20px",
-                fontFamily: "var(--font-body)",
-              }}
-            >
-              Local People.
-              <br />Real Accountability.
-            </h2>
-            <p
-              style={{
-                color: "rgba(255,255,255,0.65)",
-                lineHeight: 1.7,
-                marginBottom: "24px",
-                fontFamily: "var(--font-body)",
-                fontSize: "16px",
-              }}
-            >
-              We're not a franchise or a storm-chasing crew that rolls in after a hailstorm and disappears. Royalty Roofing and Siding is family-owned and operated right here in Omaha. When you call, you talk to us — not a call center.
-            </p>
-            <ul style={{ marginBottom: "32px" }}>
-              {[
-                "Family owned and operated since 2010",
-                "Omaha-based team — we live here too",
-                "Direct communication with your project manager",
-                "We answer our phones and return calls same day",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="flex items-center gap-3"
-                  style={{ marginBottom: "10px" }}
+        {/* LEFT: Text */}
+        <div>
+          <p
+            style={{
+              fontFamily: "var(--font-body)",
+              fontWeight: 600,
+              fontSize: "11px",
+              letterSpacing: "0.16em",
+              textTransform: "uppercase",
+              color: "#3D6CC0",
+              marginBottom: "14px",
+            }}
+          >
+            The Royalty Team
+          </p>
+
+          <h2
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(44px, 5vw, 64px)",
+              lineHeight: 0.95,
+              color: "#0A1220",
+              margin: "0 0 24px",
+              letterSpacing: "0.01em",
+            }}
+          >
+            LOCAL PEOPLE.<br />
+            <span style={{ color: "#3D6CC0" }}>REAL ACCOUNTABILITY.</span>
+          </h2>
+
+          <p
+            style={{
+              fontFamily: "var(--font-body)",
+              fontSize: "16px",
+              color: "#4B5563",
+              lineHeight: 1.75,
+              marginBottom: "28px",
+              maxWidth: "520px",
+            }}
+          >
+            We're not a franchise or a storm-chasing crew that rolls in after a hailstorm and disappears. Royalty Roofing and Siding is family-owned and operated right here in Omaha. When you call, you talk to us — not a call center.
+          </p>
+
+          {/* Proof points */}
+          <div style={{ marginBottom: "36px" }}>
+            {[
+              "Family owned and operated since 2010",
+              "Omaha-based team — we live here too",
+              "Direct communication with your project manager",
+              "We answer our phones and return calls same day",
+            ].map((item) => (
+              <div
+                key={item}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "12px",
+                  marginBottom: "12px",
+                }}
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 8l3.5 3.5L13 4.5" stroke="#3D6CC0" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <span
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "15px",
+                    color: "#374151",
+                    fontWeight: 500,
+                  }}
                 >
-                  <span
-                    style={{
-                      width: "6px",
-                      height: "6px",
-                      borderRadius: "50%",
-                      background: "#3D6CC0",
-                      flexShrink: 0,
-                      display: "inline-block",
-                    }}
-                  />
-                  <span
-                    style={{
-                      color: "rgba(255,255,255,0.75)",
-                      fontSize: "14px",
-                      fontFamily: "var(--font-body)",
-                    }}
-                  >
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <a
-              href="tel:4022168850"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                background: "#3D6CC0",
-                color: "#fff",
-                fontWeight: 600,
-                fontSize: "14px",
-                padding: "12px 24px",
-                borderRadius: "8px",
-                textDecoration: "none",
-                fontFamily: "var(--font-body)",
-                transition: "background 0.15s",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = "#2d5aad")}
-              onMouseLeave={(e) => (e.currentTarget.style.background = "#3D6CC0")}
-            >
-              Call (402) 216-8850
-            </a>
+                  {item}
+                </span>
+              </div>
+            ))}
           </div>
 
-          {/* Right: Team photos */}
-          <div className="flex gap-4 justify-center lg:justify-end">
-            <div className="flex flex-col gap-4">
-              <div
-                style={{
-                  width: "180px",
-                  height: "220px",
-                  borderRadius: "12px",
-                  overflow: "hidden",
-                  border: "2px solid rgba(61,108,192,0.4)",
-                  boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
-                }}
-              >
-                <img
-                  src="/manus-storage/team-1_82b94146.webp"
-                  alt="AJ Velasquez — Owner, Royalty Roofing and Siding"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
-                />
-              </div>
-              <div
-                style={{
-                  borderRadius: "8px",
-                  padding: "12px 16px",
-                  textAlign: "center",
-                  background: "rgba(61,108,192,0.15)",
-                  border: "1px solid rgba(61,108,192,0.3)",
-                }}
-              >
-                <div style={{ color: "#fff", fontWeight: 600, fontSize: "14px", fontFamily: "var(--font-body)" }}>
-                  AJ Velasquez
-                </div>
-                <div style={{ color: "rgba(255,255,255,0.45)", fontSize: "12px", marginTop: "2px", fontFamily: "var(--font-body)" }}>
-                  Owner
-                </div>
-              </div>
+          <a
+            href="tel:4022168850"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              background: "#3D6CC0",
+              color: "white",
+              fontFamily: "var(--font-body)",
+              fontWeight: 700,
+              fontSize: "15px",
+              padding: "14px 32px",
+              borderRadius: "6px",
+              textDecoration: "none",
+              transition: "background 0.15s, transform 0.15s",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.background = "#2d5aad";
+              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-1px)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.background = "#3D6CC0";
+              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
+            }}
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            Call (402) 216-8850
+          </a>
+        </div>
+
+        {/* RIGHT: Team photos */}
+        <div
+          style={{
+            display: "flex",
+            gap: "20px",
+            justifyContent: "center",
+            alignItems: "flex-start",
+          }}
+        >
+          {/* Photo 1 */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+            <div
+              style={{
+                width: "200px",
+                height: "250px",
+                borderRadius: "8px",
+                overflow: "hidden",
+                boxShadow: "0 12px 40px rgba(0,0,0,0.15)",
+                border: "3px solid white",
+              }}
+            >
+              <img
+                src={TEAM_1}
+                alt="AJ Velasquez — Owner, Royalty Roofing and Siding"
+                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }}
+              />
             </div>
-            <div className="flex flex-col gap-4" style={{ marginTop: "32px" }}>
-              <div
-                style={{
-                  width: "180px",
-                  height: "220px",
-                  borderRadius: "12px",
-                  overflow: "hidden",
-                  border: "2px solid rgba(61,108,192,0.4)",
-                  boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
-                }}
-              >
-                <img
-                  src="/manus-storage/team-2_267ba821.webp"
-                  alt="David Velasquez — Co-Owner, Royalty Roofing and Siding"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
-                />
-              </div>
-              <div
-                style={{
-                  borderRadius: "8px",
-                  padding: "12px 16px",
-                  textAlign: "center",
-                  background: "rgba(61,108,192,0.15)",
-                  border: "1px solid rgba(61,108,192,0.3)",
-                }}
-              >
-                <div style={{ color: "#fff", fontWeight: 600, fontSize: "14px", fontFamily: "var(--font-body)" }}>
-                  David Velasquez
-                </div>
-                <div style={{ color: "rgba(255,255,255,0.45)", fontSize: "12px", marginTop: "2px", fontFamily: "var(--font-body)" }}>
-                  Co-Owner
-                </div>
-              </div>
+            <div style={{ textAlign: "center" }}>
+              <p style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "15px", color: "#0A1220" }}>AJ Velasquez</p>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: "13px", color: "#6B7280" }}>Owner</p>
+            </div>
+          </div>
+
+          {/* Photo 2 — offset */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "40px" }}>
+            <div
+              style={{
+                width: "200px",
+                height: "250px",
+                borderRadius: "8px",
+                overflow: "hidden",
+                boxShadow: "0 12px 40px rgba(0,0,0,0.15)",
+                border: "3px solid white",
+              }}
+            >
+              <img
+                src={TEAM_2}
+                alt="David Velasquez — Co-Owner, Royalty Roofing and Siding"
+                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }}
+              />
+            </div>
+            <div style={{ textAlign: "center" }}>
+              <p style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "15px", color: "#0A1220" }}>David Velasquez</p>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: "13px", color: "#6B7280" }}>Co-Owner</p>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Responsive */}
+      <style>{`
+        @media (max-width: 900px) {
+          .team-grid {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

@@ -1,59 +1,93 @@
 /**
- * Navbar — Fixed top, full-width, dark navy
- * Three zones: logo left | anchor links center (desktop) | phone + CTA right
- * Design: #0F1B2D bg, #3D6CC0 CTA, DM Sans, no gold
+ * Navbar — Royalty Roofing
+ * - Top announcement bar: blue bg, key trust points
+ * - Main bar: near-black (#0A1220), logo left, anchor links center, phone+CTA right
+ * - Solid and confident — no blur/transparency
+ * CDN: logo_83b61d51.png
  */
+
+const LOGO = "/manus-storage/logo-white_d1fb2924.png";
+
 export default function Navbar() {
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 h-16 flex items-center"
-      style={{
-        background: "rgba(15,27,45,0.95)",
-        backdropFilter: "blur(8px)",
-        borderBottom: "1px solid rgba(255,255,255,0.08)",
-      }}
-    >
+    <header style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100 }}>
+      {/* Announcement bar */}
       <div
-        className="w-full flex items-center justify-between px-6"
-        style={{ maxWidth: "1280px", margin: "0 auto" }}
+        style={{
+          background: "#3D6CC0",
+          color: "white",
+          textAlign: "center",
+          padding: "7px 16px",
+          fontSize: "12.5px",
+          fontFamily: "var(--font-body)",
+          fontWeight: 600,
+          letterSpacing: "0.05em",
+          lineHeight: 1.4,
+        }}
       >
-        {/* Left: Logo */}
-        <a href="/" className="flex items-center shrink-0">
+        ★&nbsp; BEST OF OMAHA — ROOFING &amp; SIDING — 7 YEARS RUNNING &nbsp;|&nbsp; FREE ROOF INSPECTION &nbsp;|&nbsp; WE HANDLE YOUR INSURANCE CLAIM
+      </div>
+
+      {/* Main nav */}
+      <nav
+        style={{
+          background: "#0A1220",
+          borderBottom: "1px solid rgba(255,255,255,0.07)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: "0 28px",
+          height: "66px",
+        }}
+      >
+        {/* Logo */}
+        <a href="/" style={{ display: "flex", alignItems: "center", flexShrink: 0, textDecoration: "none" }}>
           <img
-            src="/manus-storage/logo_5194693c.png"
+            src={LOGO}
             alt="Royalty Roofing and Siding"
-            style={{ height: "36px", width: "auto", objectFit: "contain", filter: "brightness(0) invert(1)" }}
+            style={{ height: "46px", width: "auto", objectFit: "contain" }}
           />
         </a>
 
-        {/* Center: Anchor links (desktop only) */}
-        <div className="hidden lg:flex items-center gap-1">
+        {/* Center nav links — desktop */}
+        <div
+          style={{ display: "flex", alignItems: "center", gap: "4px" }}
+          className="hidden lg:flex"
+        >
           {[
+            { label: "Why Royalty", id: "why-royalty" },
             { label: "Reviews", id: "reviews" },
             { label: "Our Team", id: "team" },
-            { label: "Why Royalty", id: "why-royalty" },
             { label: "Get Estimate", id: "bottom-form" },
           ].map(({ label, id }) => (
             <button
               key={id}
               onClick={() => scrollTo(id)}
               style={{
-                fontSize: "13px",
-                fontWeight: 500,
-                color: "rgba(255,255,255,0.7)",
                 background: "none",
                 border: "none",
-                cursor: "pointer",
+                color: "rgba(255,255,255,0.75)",
                 fontFamily: "var(--font-body)",
-                padding: "6px 16px",
-                transition: "color 0.15s",
+                fontWeight: 500,
+                fontSize: "14px",
+                letterSpacing: "0.02em",
+                cursor: "pointer",
+                padding: "8px 18px",
+                borderRadius: "4px",
+                transition: "color 0.15s, background 0.15s",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.7)")}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.color = "#fff";
+                (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.06)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.75)";
+                (e.currentTarget as HTMLButtonElement).style.background = "none";
+              }}
             >
               {label}
             </button>
@@ -61,43 +95,50 @@ export default function Navbar() {
         </div>
 
         {/* Right: Phone + CTA */}
-        <div className="flex items-center gap-4">
+        <div style={{ display: "flex", alignItems: "center", gap: "14px", flexShrink: 0 }}>
           <a
             href="tel:4022168850"
-            className="hidden sm:block transition-colors"
             style={{
-              color: "rgba(255,255,255,0.8)",
-              fontSize: "14px",
-              fontWeight: 500,
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              color: "white",
               fontFamily: "var(--font-body)",
+              fontWeight: 700,
+              fontSize: "15px",
               textDecoration: "none",
+              letterSpacing: "0.01em",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.8)")}
           >
-            (402) 216-8850
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span className="hidden sm:inline">(402) 216-8850</span>
           </a>
+
           <button
             onClick={() => scrollTo("bottom-form")}
             style={{
               background: "#3D6CC0",
-              color: "#fff",
+              color: "white",
+              fontFamily: "var(--font-body)",
+              fontWeight: 700,
               fontSize: "14px",
-              fontWeight: 600,
-              padding: "8px 20px",
-              borderRadius: "8px",
+              padding: "10px 22px",
+              borderRadius: "6px",
               border: "none",
               cursor: "pointer",
-              fontFamily: "var(--font-body)",
+              letterSpacing: "0.03em",
               transition: "background 0.15s",
+              whiteSpace: "nowrap",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "#2d5aad")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "#3D6CC0")}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.background = "#2d5aad"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.background = "#3D6CC0"; }}
           >
-            Free Estimate
+            Free Estimate →
           </button>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }

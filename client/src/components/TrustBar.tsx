@@ -1,138 +1,169 @@
 /**
- * TrustBar — Stats strip + Best of Omaha badges
- * bg-[#0F1B2D], flush below hero (no gap), no gold
- * Stars use #F59E0B (only acceptable warm color)
+ * TrustBar — Royalty Roofing
+ * - Flush below hero, dark navy (#0A1220) background
+ * - Stats row: 4.9★ | 7× | 15+ | 500+
+ * - Award badges row: all 7 Best of Omaha badges with VERIFIED CDN URLs
+ * CDN URLs verified 2026-04-22
  */
 import { useEffect, useRef, useState } from "react";
 
 const STATS = [
-  { display: "4.9", hasStars: true, label: "500+ Google Reviews" },
-  { display: "7x", hasStars: false, label: "Best of Omaha Winner" },
-  { display: "15+", hasStars: false, label: "Years in Omaha" },
-  { display: "500+", hasStars: false, label: "Projects Completed" },
+  { display: "4.9★", label: "Google Rating" },
+  { display: "7×", label: "Best of Omaha Winner" },
+  { display: "15+", label: "Years Serving Omaha" },
+  { display: "500+", label: "Projects Completed" },
 ];
 
 const AWARDS = [
-  { src: "/manus-storage/award-2020_4ad2a5bb.png", alt: "Best of Omaha 2020 — Residential Roofing" },
-  { src: "/manus-storage/award-2021_ecbc78f2.jpg", alt: "Best of Omaha 2021 — Residential Roofing" },
-  { src: "/manus-storage/award-2022_5ea9299b.png", alt: "Best of Omaha 2022 — Residential Siding" },
-  { src: "/manus-storage/award-2023_6a88d922.png", alt: "Best of Omaha 2023 — Residential Roofing" },
-  { src: "/manus-storage/award-2024_e8dc19af.png", alt: "Best of Omaha 2024 — Residential Roofing" },
-  { src: "/manus-storage/award-2025_4128df32.png", alt: "Best of Omaha 2025 — Residential Roofing" },
-  { src: "/manus-storage/award-2026_590c0eff.png", alt: "Best of Omaha 2026 — Residential Siding" },
+  { src: "/manus-storage/award-2020_17c3d195.png", alt: "Best of Omaha 2020 — Residential Roofing" },
+  { src: "/manus-storage/award-2021_121f00bd.jpg", alt: "Best of Omaha 2021 — Residential Roofing" },
+  { src: "/manus-storage/award-2022_6874c154.png", alt: "Best of Omaha 2022 — Residential Siding" },
+  { src: "/manus-storage/award-2023_495972e7.png", alt: "Best of Omaha 2023 — Residential Roofing" },
+  { src: "/manus-storage/award-2024_81d046f1.png", alt: "Best of Omaha 2024 — Residential Roofing" },
+  { src: "/manus-storage/award-2025_c49a7694.png", alt: "Best of Omaha 2025 — Residential Roofing" },
+  { src: "/manus-storage/award-2026_19da9448.png", alt: "Best of Omaha 2026 — Residential Siding" },
 ];
 
-function StarIcons() {
-  return (
-    <span className="inline-flex gap-0.5 ml-1.5 align-middle">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-        </svg>
-      ))}
-    </span>
-  );
-}
-
-function AnimatedNumber({ target }: { target: string }) {
-  const [shown, setShown] = useState(false);
-  const ref = useRef<HTMLSpanElement>(null);
-
+function AnimatedStat({ display }: { display: string }) {
+  const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setShown(true); },
-      { threshold: 0.5 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVisible(true); }, { threshold: 0.1 });
+    if (ref.current) obs.observe(ref.current);
+    return () => obs.disconnect();
   }, []);
-
-  return <span ref={ref}>{shown ? target : "—"}</span>;
+  return (
+    <div
+      ref={ref}
+      style={{
+        fontFamily: "var(--font-display)",
+        fontSize: "clamp(40px, 4.5vw, 56px)",
+        color: "white",
+        lineHeight: 1,
+        letterSpacing: "0.01em",
+        opacity: visible ? 1 : 0.15,
+        transform: visible ? "translateY(0)" : "translateY(8px)",
+        transition: "opacity 0.5s ease, transform 0.5s ease",
+      }}
+    >
+      {display}
+    </div>
+  );
 }
 
 export default function TrustBar() {
   return (
-    <section style={{ background: "#0F1B2D", paddingBottom: "48px" }}>
-      {/* Stats strip */}
+    <section style={{ background: "#0A1220", paddingBottom: "64px" }}>
+      {/* Stats row */}
       <div
-        className="w-full px-6 py-8"
-        style={{ maxWidth: "1280px", margin: "0 auto" }}
+        style={{
+          maxWidth: "1280px",
+          margin: "0 auto",
+          padding: "56px 28px 48px",
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          gap: "0",
+        }}
+        className="stats-grid"
       >
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:flex md:items-center md:justify-center">
-          {STATS.map((stat, i) => (
-            <div key={stat.label} className="flex items-center">
-              {i > 0 && (
-                <div
-                  className="hidden md:block w-px h-8 mx-10 shrink-0"
-                  style={{ background: "rgba(255,255,255,0.1)" }}
-                />
-              )}
-              <div className="flex flex-col items-center text-center">
-                <div
-                  style={{
-                    fontSize: "30px",
-                    fontWeight: 700,
-                    color: "#ffffff",
-                    fontFamily: "var(--font-body)",
-                    lineHeight: 1,
-                  }}
-                >
-                  <AnimatedNumber target={stat.display} />
-                  {stat.hasStars && <StarIcons />}
-                </div>
-                <div
-                  style={{
-                    fontSize: "11px",
-                    fontWeight: 500,
-                    color: "rgba(255,255,255,0.5)",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.08em",
-                    marginTop: "6px",
-                    fontFamily: "var(--font-body)",
-                  }}
-                >
-                  {stat.label}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        {STATS.map((stat, i) => (
+          <div
+            key={stat.label}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              textAlign: "center",
+              padding: "0 16px",
+              borderRight: i < STATS.length - 1 ? "1px solid rgba(255,255,255,0.08)" : "none",
+            }}
+          >
+            <AnimatedStat display={stat.display} />
+            <p
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "12px",
+                fontWeight: 500,
+                color: "rgba(255,255,255,0.45)",
+                textTransform: "uppercase",
+                letterSpacing: "0.1em",
+                marginTop: "10px",
+              }}
+            >
+              {stat.label}
+            </p>
+          </div>
+        ))}
       </div>
 
       {/* Divider */}
-      <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", margin: "0 24px" }} />
+      <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", margin: "0 28px 44px" }} />
 
-      {/* Award badges */}
-      <div
-        className="w-full px-6 pt-10"
-        style={{ maxWidth: "1280px", margin: "0 auto" }}
+      {/* Award badges label */}
+      <p
+        style={{
+          textAlign: "center",
+          fontFamily: "var(--font-body)",
+          fontSize: "11px",
+          fontWeight: 600,
+          letterSpacing: "0.14em",
+          textTransform: "uppercase",
+          color: "rgba(255,255,255,0.35)",
+          marginBottom: "28px",
+        }}
       >
-        <p
-          className="text-center mb-6"
-          style={{
-            fontSize: "11px",
-            fontWeight: 500,
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-            color: "rgba(255,255,255,0.4)",
-            fontFamily: "var(--font-body)",
-          }}
-        >
-          OMAHA MAGAZINE'S BEST OF OMAHA — 7 CONSECUTIVE YEARS
-        </p>
-        <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
-          {AWARDS.map((award) => (
-            <img
-              key={award.alt}
-              src={award.src}
-              alt={award.alt}
-              style={{ height: "64px", width: "auto", objectFit: "contain", opacity: 0.9, transition: "opacity 0.2s" }}
-              onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
-              onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.9")}
-            />
-          ))}
-        </div>
+        Omaha Magazine's Best of Omaha — 7 Consecutive Years
+      </p>
+
+      {/* Award badges row */}
+      <div
+        style={{
+          maxWidth: "1280px",
+          margin: "0 auto",
+          padding: "0 28px",
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "24px",
+        }}
+      >
+        {AWARDS.map((award) => (
+          <img
+            key={award.alt}
+            src={award.src}
+            alt={award.alt}
+            style={{
+              height: "88px",
+              width: "auto",
+              objectFit: "contain",
+              opacity: 0.85,
+              transition: "opacity 0.2s, transform 0.2s",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLImageElement).style.opacity = "1";
+              (e.currentTarget as HTMLImageElement).style.transform = "scale(1.06)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLImageElement).style.opacity = "0.85";
+              (e.currentTarget as HTMLImageElement).style.transform = "scale(1)";
+            }}
+          />
+        ))}
       </div>
+
+      {/* Responsive */}
+      <style>{`
+        @media (max-width: 640px) {
+          .stats-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 28px !important;
+          }
+          .stats-grid > div {
+            border-right: none !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
