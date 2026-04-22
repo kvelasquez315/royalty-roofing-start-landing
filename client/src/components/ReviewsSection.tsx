@@ -91,7 +91,7 @@ export default function ReviewsSection() {
               letterSpacing: "0.01em",
             }}
           >
-            OVER 500 OMAHA HOMEOWNERS HAVE TRUSTED US WITH THEIR ROOF AND<br />
+            THOUSANDS OF OMAHA HOMEOWNERS HAVE TRUSTED US WITH THEIR ROOF AND<br />
             <span style={{ color: "#3D6CC0" }}>GIVEN US 4.9 STARS ON GOOGLE.</span>
           </h2>
         </div>

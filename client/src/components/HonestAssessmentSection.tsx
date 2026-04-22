@@ -110,20 +110,16 @@ export default function HonestAssessmentSection() {
                 <div
                   style={{
                     flexShrink: 0,
-                    width: "28px",
-                    height: "28px",
-                    borderRadius: "4px",
-                    background: "#3D6CC0",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
                     fontFamily: "var(--font-display)",
-                    fontSize: "16px",
-                    color: "white",
-                    marginTop: "2px",
+                    fontSize: "42px",
+                    lineHeight: 1,
+                    color: "#3D6CC0",
+                    opacity: 0.55,
+                    marginTop: "0px",
+                    minWidth: "52px",
                   }}
                 >
-                  {i + 1}
+                  {String(i + 1).padStart(2, "0")}
                 </div>
                 <div>
                   <p
