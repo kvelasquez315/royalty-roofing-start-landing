@@ -200,6 +200,12 @@ export default function HonestAssessmentSection() {
           .why-grid {
             grid-template-columns: 1fr !important;
             gap: 40px !important;
+            padding: 0 16px !important;
+          }
+        }
+        @media (max-width: 640px) {
+          #why-royalty {
+            padding: 64px 0 !important;
           }
         }
       `}</style>

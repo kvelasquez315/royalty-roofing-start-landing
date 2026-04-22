@@ -96,7 +96,7 @@ export default function TrustBar() {
       </div>
 
       {/* Awards strip — white background */}
-      <div style={{ background: "#ffffff", borderTop: "1px solid #e5e7eb", padding: "48px 28px" }}>
+      <div className="awards-strip" style={{ background: "#ffffff", borderTop: "1px solid #e5e7eb", padding: "48px 28px" }}>
         <p
           style={{
             textAlign: "center",
@@ -156,9 +156,16 @@ export default function TrustBar() {
           .stats-grid {
             grid-template-columns: repeat(2, 1fr) !important;
             gap: 28px !important;
+            padding: 40px 20px 36px !important;
           }
           .stats-grid > div {
             border-right: none !important;
+          }
+          .awards-strip {
+            padding: 32px 16px !important;
+          }
+          .awards-strip img {
+            height: 64px !important;
           }
         }
       `}</style>

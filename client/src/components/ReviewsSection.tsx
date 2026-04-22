@@ -180,9 +180,15 @@ export default function ReviewsSection() {
 
       {/* Responsive */}
       <style>{`
-        @media (max-width: 900px) {
+        @media (max-width: 640px) {
           .reviews-grid {
             grid-template-columns: 1fr !important;
+          }
+          #reviews {
+            padding: 64px 0 !important;
+          }
+          #reviews > div {
+            padding: 0 16px !important;
           }
         }
         @media (min-width: 640px) and (max-width: 900px) {

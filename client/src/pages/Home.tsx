@@ -22,6 +22,7 @@ import HonestAssessmentSection from "@/components/HonestAssessmentSection";
 import Navbar from "@/components/Navbar";
 import ReviewsSection from "@/components/ReviewsSection";
 import TeamBannerSection from "@/components/TeamBannerSection";
+import StickyMobileCTA from "@/components/StickyMobileCTA";
 import TrustBar from "@/components/TrustBar";
 
 export default function Home() {
@@ -35,6 +36,7 @@ export default function Home() {
       <TeamBannerSection />
       <BottomFormSection />
       <Footer />
+      <StickyMobileCTA />
     </div>
   );
 }

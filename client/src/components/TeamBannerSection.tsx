@@ -141,6 +141,7 @@ export default function TeamBannerSection() {
 
         {/* RIGHT: Team photos — equal side by side, no overlap, no offset */}
         <div
+          className="team-photos"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -185,6 +186,19 @@ export default function TeamBannerSection() {
           .team-grid {
             grid-template-columns: 1fr !important;
             gap: 40px !important;
+            padding: 0 16px !important;
+          }
+        }
+        @media (max-width: 640px) {
+          #team {
+            padding: 64px 0 !important;
+          }
+          .team-photos {
+            grid-template-columns: 1fr 1fr !important;
+            gap: 12px !important;
+          }
+          .team-photos > div {
+            aspect-ratio: 3/4 !important;
           }
         }
       `}</style>

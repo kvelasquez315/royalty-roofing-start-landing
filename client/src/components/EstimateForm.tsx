@@ -178,7 +178,7 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
 
       <div className="px-7 pb-7 space-y-4">
         {/* Name row */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }} className="form-two-col">
           <div>
             <label style={labelStyle} htmlFor="firstName">First Name <span style={{ color: "#f87171" }}>*</span></label>
             <input
@@ -208,7 +208,7 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
         </div>
 
         {/* Phone + Email */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }} className="form-two-col">
           <div>
             <label style={labelStyle} htmlFor="phone">Phone <span style={{ color: "#f87171" }}>*</span></label>
             <input
@@ -380,6 +380,18 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
           </p>
         )}
       </div>
+
+      <style>{`
+        @media (max-width: 480px) {
+          .form-two-col {
+            grid-template-columns: 1fr !important;
+          }
+          .px-7 {
+            padding-left: 1.25rem !important;
+            padding-right: 1.25rem !important;
+          }
+        }
+      `}</style>
     </form>
   );
 }
