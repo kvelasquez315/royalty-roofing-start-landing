@@ -142,7 +142,7 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
             color: isGlass ? "white" : "#0F1B2D",
           }}
         >
-          Get Your Free Estimate
+          Get Your Free Consultation
         </h3>
         <p className={`text-xs mt-0.5 ${isGlass ? "text-white/60" : "text-gray-500"}`}>
           Response within one business day. No obligation.

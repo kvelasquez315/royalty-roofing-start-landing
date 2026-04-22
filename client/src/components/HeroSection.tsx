@@ -11,11 +11,12 @@ const HOUSE_FRONT = "/manus-storage/house-front_d3955cbd.webp";
 const badgeStyle: React.CSSProperties = {
   display: "flex",
   alignItems: "center",
-  gap: "8px",
-  background: "rgba(255,255,255,0.08)",
-  border: "1px solid rgba(255,255,255,0.14)",
+  gap: "10px",
+  background: "rgba(255,255,255,0.16)",
+  border: "1px solid rgba(255,255,255,0.35)",
   borderRadius: "8px",
-  padding: "8px 12px",
+  padding: "10px 16px",
+  backdropFilter: "blur(8px)",
 };
 
 export default function HeroSection() {
@@ -140,7 +141,7 @@ export default function HeroSection() {
                     </svg>
                   ))}
                 </div>
-                <span style={{ fontSize: "13px", color: "rgba(255,255,255,0.75)", fontFamily: "var(--font-body)" }}>4.9 · 500+ Reviews</span>
+                <span style={{ fontSize: "13px", color: "rgba(255,255,255,0.90)", fontFamily: "var(--font-body)" }}>4.9 · 500+ Reviews</span>
               </div>
             </div>
 
@@ -150,8 +151,8 @@ export default function HeroSection() {
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
               </svg>
               <div>
-                <div style={{ fontSize: "14px", fontWeight: 700, color: "white", fontFamily: "var(--font-body)", lineHeight: 1.2 }}>Best of Omaha</div>
-                <div style={{ fontSize: "13px", color: "rgba(255,255,255,0.75)", fontFamily: "var(--font-body)" }}>7 Years Running</div>
+                <div style={{ fontSize: "15px", fontWeight: 700, color: "white", fontFamily: "var(--font-body)", lineHeight: 1.2 }}>Best of Omaha</div>
+                <div style={{ fontSize: "13px", color: "rgba(255,255,255,0.90)", fontFamily: "var(--font-body)" }}>7 Years Running</div>
               </div>
             </div>
 
@@ -162,8 +163,8 @@ export default function HeroSection() {
                 <path d="M12 6v6l4 2"/>
               </svg>
               <div>
-                <div style={{ fontSize: "14px", fontWeight: 700, color: "white", fontFamily: "var(--font-body)", lineHeight: 1.2 }}>BBB Accredited</div>
-                <div style={{ fontSize: "13px", color: "rgba(255,255,255,0.75)", fontFamily: "var(--font-body)" }}>A+ Rating</div>
+                <div style={{ fontSize: "15px", fontWeight: 700, color: "white", fontFamily: "var(--font-body)", lineHeight: 1.2 }}>BBB Accredited</div>
+                <div style={{ fontSize: "13px", color: "rgba(255,255,255,0.90)", fontFamily: "var(--font-body)" }}>A+ Rating</div>
               </div>
             </div>
           </div>
