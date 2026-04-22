@@ -162,7 +162,7 @@ export default function HeroSection() {
               <img
                 src={BBB_LOGO}
                 alt="BBB"
-                style={{ width: "28px", height: "28px", objectFit: "contain", filter: "brightness(0) invert(1)" }}
+                style={{ width: "28px", height: "28px", objectFit: "contain" }}
               />
               <div>
                 <div style={{ fontSize: "16px", fontWeight: 700, color: "white", fontFamily: "var(--font-body)", lineHeight: 1.2 }}>BBB Accredited</div>
