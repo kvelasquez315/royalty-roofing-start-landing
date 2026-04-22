@@ -14,13 +14,13 @@ const STATS = [
 ];
 
 const AWARDS = [
-  { src: "/manus-storage/award-2020_17c3d195.png", alt: "Best of Omaha 2020 — Residential Roofing" },
-  { src: "/manus-storage/award-2021-screenshot_d404d133.png", alt: "Best of Omaha 2021 — Residential Roofing" },
-  { src: "/manus-storage/award-2022_6874c154.png", alt: "Best of Omaha 2022 — Residential Siding" },
-  { src: "/manus-storage/award-2023_495972e7.png", alt: "Best of Omaha 2023 — Residential Roofing" },
-  { src: "/manus-storage/award-2024_81d046f1.png", alt: "Best of Omaha 2024 — Residential Roofing" },
-  { src: "/manus-storage/award-2025_c49a7694.png", alt: "Best of Omaha 2025 — Residential Roofing" },
-  { src: "/manus-storage/award-2026_19da9448.png", alt: "Best of Omaha 2026 — Residential Siding" },
+  { src: "/manus-storage/award-2020_17c3d195.png", alt: "Best of Omaha 2020, Residential Roofing" },
+  { src: "/manus-storage/award-2021-screenshot_d404d133.png", alt: "Best of Omaha 2021, Residential Roofing" },
+  { src: "/manus-storage/award-2022_6874c154.png", alt: "Best of Omaha 2022, Residential Siding" },
+  { src: "/manus-storage/award-2023_495972e7.png", alt: "Best of Omaha 2023, Residential Roofing" },
+  { src: "/manus-storage/award-2024_81d046f1.png", alt: "Best of Omaha 2024, Residential Roofing" },
+  { src: "/manus-storage/award-2025_c49a7694.png", alt: "Best of Omaha 2025, Residential Roofing" },
+  { src: "/manus-storage/award-2026_19da9448.png", alt: "Best of Omaha 2026, Residential Siding" },
 ];
 
 function AnimatedStat({ display }: { display: string }) {
@@ -109,7 +109,7 @@ export default function TrustBar() {
             marginBottom: "28px",
           }}
         >
-          Omaha Magazine's Best of Omaha — 7 Consecutive Years
+          Omaha Magazine's Best of Omaha, 7 Consecutive Years
         </p>
 
         {/* Award badges row */}

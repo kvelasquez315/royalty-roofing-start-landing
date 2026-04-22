@@ -66,7 +66,7 @@ export default function BottomFormSection() {
               maxWidth: "480px",
             }}
           >
-            We'll come to your home, get on your roof, and give you a full written assessment with photos — completely free. No obligation, no pressure. We tell you what it needs, whether that's a repair or a replacement. Response within one business day.
+            We'll come to your home, get on your roof, and give you a full written assessment with photos, completely free. No obligation, no pressure. We tell you what it needs, whether that's a repair or a replacement. Response within one business day.
           </p>
 
           {/* Big phone number */}
@@ -97,7 +97,7 @@ export default function BottomFormSection() {
           <div>
             {[
               "Family Owned & Operated Since 2010",
-              "Best of Omaha — 7 Consecutive Years",
+              "Best of Omaha, 7 Consecutive Years",
               "4.9 Stars on Google (500+ Reviews)",
               "Licensed & Insured in Nebraska",
               "Workmanship Warranty on Every Job",

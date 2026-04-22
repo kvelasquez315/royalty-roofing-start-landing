@@ -70,14 +70,14 @@ export default function TeamBannerSection() {
               maxWidth: "520px",
             }}
           >
-            We're not a franchise or a storm-chasing crew that rolls in after a hailstorm and disappears. Royalty Roofing and Siding is family-owned and operated right here in Omaha. When you call, you talk to us — not a call center.
+            We're not a franchise or a storm-chasing crew that rolls in after a hailstorm and disappears. Royalty Roofing and Siding is family-owned and operated right here in Omaha. When you call, you talk to us directly, not a call center.
           </p>
 
           {/* Proof points */}
           <div style={{ marginBottom: "36px" }}>
             {[
               "Family owned and operated since 2010",
-              "Omaha-based team — we live here too",
+              "Omaha-based team, we live here too",
               "Direct communication with your project manager",
               "We answer our phones and return calls same day",
             ].map((item) => (
@@ -158,7 +158,7 @@ export default function TeamBannerSection() {
           >
             <img
               src={TEAM_1}
-              alt="AJ Velasquez — Owner, Royalty Roofing and Siding"
+              alt="AJ Velasquez, Owner, Royalty Roofing and Siding"
               style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }}
             />
           </div>
@@ -172,7 +172,7 @@ export default function TeamBannerSection() {
           >
             <img
               src={TEAM_2}
-              alt="David Velasquez — Co-Owner, Royalty Roofing and Siding"
+              alt="David Velasquez, Co-Owner, Royalty Roofing and Siding"
               style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }}
             />
           </div>

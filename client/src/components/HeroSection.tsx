@@ -30,7 +30,7 @@ export default function HeroSection() {
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
-        paddingTop: "80px",
+        paddingTop: "106px",
         overflow: "hidden",
       }}
     >
@@ -114,7 +114,7 @@ export default function HeroSection() {
               marginBottom: "36px",
             }}
           >
-            Most roofers show up and quote a full replacement. We get on your roof, document everything with photos, and give you an honest written assessment — if a repair will do the job, that's what we'll recommend. Omaha's most trusted roofer since 2010.
+            Most roofers show up and quote a full replacement. We get on your roof, document everything with photos, and give you an honest written assessment. If a repair will do the job, that's what we'll recommend. Omaha's most trusted roofer since 2010.
           </p>
 
           {/* Trust badge cluster — bigger */}

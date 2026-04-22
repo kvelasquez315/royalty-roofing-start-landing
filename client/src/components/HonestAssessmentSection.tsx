@@ -11,11 +11,11 @@ const HERO_BG = "/manus-storage/hero-bg_0ebd1de5.webp";
 
 const PROOF_BLOCKS = [
   {
-    label: "Free roof inspection — we get on the roof, not just look from the driveway",
+    label: "Free roof inspection: we get on the roof, not just look from the driveway",
     desc: "We physically inspect every section, document everything with photos, and give you a written assessment. You see exactly what we see.",
   },
   {
-    label: "We quote repairs first — not replacements",
+    label: "We quote repairs first, not replacements",
     desc: "Most companies push full replacements because the margin is higher. If your roof can be repaired, we'll tell you that and do the repair right.",
   },
   {
@@ -24,7 +24,7 @@ const PROOF_BLOCKS = [
   },
   {
     label: "Every job backed by a written workmanship warranty",
-    desc: "We stand behind our work. Every repair and replacement comes with a written warranty — not just a handshake.",
+    desc: "We stand behind our work. Every repair and replacement comes with a written warranty, not just a handshake.",
   },
 ];
 
@@ -90,7 +90,7 @@ export default function HonestAssessmentSection() {
               maxWidth: "520px",
             }}
           >
-            Most roofing companies skip the inspection and go straight to quoting a replacement. We don't. We get on your roof, document what we find, and give you a straight answer — repair or replace. No pressure, no upsell, no guessing.
+            Most roofing companies skip the inspection and go straight to quoting a replacement. We don't. We get on your roof, document what we find, and give you a straight answer: repair or replace. No pressure, no upsell, no guessing.
           </p>
 
           {/* Proof blocks */}
