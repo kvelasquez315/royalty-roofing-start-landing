@@ -41,15 +41,15 @@ export default function Navbar() {
           alignItems: "center",
           justifyContent: "space-between",
           padding: "0 32px",
-          height: "88px",
+          height: "96px",
         }}
       >
-        {/* Logo - big, matching royaltyroofing.org scale */}
-        <a href="/" style={{ display: "flex", alignItems: "center", flexShrink: 0, textDecoration: "none" }}>
+        {/* Logo - fills the full nav height, same as royaltyroofing.org */}
+        <a href="/" style={{ display: "flex", alignItems: "stretch", flexShrink: 0, textDecoration: "none", padding: "8px 0" }}>
           <img
             src={LOGO}
             alt="Royalty Roofing and Siding"
-            style={{ height: "72px", width: "auto", objectFit: "contain", maxWidth: "360px" }}
+            style={{ height: "100%", width: "auto", objectFit: "contain", maxWidth: "400px" }}
           />
         </a>
 
