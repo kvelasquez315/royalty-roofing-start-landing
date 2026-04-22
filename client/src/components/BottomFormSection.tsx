@@ -131,7 +131,7 @@ export default function BottomFormSection() {
 
         {/* RIGHT: Form */}
         <div>
-          <EstimateForm variant="card" />
+          <EstimateForm variant="glass" />
         </div>
       </div>
 

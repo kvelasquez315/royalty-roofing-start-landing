@@ -1,7 +1,9 @@
 /**
  * EstimateForm — shared form used in HeroSection and BottomFormSection
+ * Design: Dark card (#0d1a2e / near-black), large white inputs with rounded-xl,
+ * full-width selects stacked, big blue CTA button with Bebas Neue uppercase text.
+ * Matches reference screenshot from Moose Roofing style.
  * Variant: "glass" (hero overlay) | "card" (white card on dark bg)
- * Blue submit button (#3D6CC0), rounded-lg (8px), no gold
  */
 import { useState } from "react";
 import { CheckCircle, Loader2 } from "lucide-react";
@@ -45,20 +47,6 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
     consentPrivacy: false,
   });
 
-  const isGlass = variant === "glass";
-
-  const inputClass = isGlass
-    ? "w-full px-3 py-2.5 rounded-lg text-sm bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white/60 focus:bg-white/15 transition-all"
-    : "w-full px-3 py-2.5 rounded-lg text-sm bg-white border border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all";
-
-  const labelClass = isGlass
-    ? "block text-xs font-semibold text-white/80 mb-1"
-    : "block text-xs font-semibold text-gray-700 mb-1";
-
-  const selectClass = isGlass
-    ? "w-full px-3 py-2.5 rounded-lg text-sm bg-white/10 border border-white/20 text-white focus:outline-none focus:border-white/60 transition-all appearance-none"
-    : "w-full px-3 py-2.5 rounded-lg text-sm bg-white border border-gray-200 text-gray-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all appearance-none";
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
     setForm((prev) => ({
@@ -89,29 +77,68 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
     }
   };
 
+  const cardBg = "rgba(8, 16, 32, 0.82)";
+  const cardBorder = "1px solid rgba(255,255,255,0.12)";
+  const inputStyle: React.CSSProperties = {
+    width: "100%",
+    padding: "14px 18px",
+    borderRadius: "10px",
+    fontSize: "15px",
+    background: "rgba(255,255,255,0.92)",
+    border: "1.5px solid rgba(255,255,255,0.7)",
+    color: "#111",
+    outline: "none",
+    fontFamily: "var(--font-body)",
+    boxSizing: "border-box",
+    transition: "border-color 0.2s",
+  };
+  const labelStyle: React.CSSProperties = {
+    display: "block",
+    fontSize: "13px",
+    fontWeight: 600,
+    color: "rgba(255,255,255,0.85)",
+    marginBottom: "6px",
+    fontFamily: "var(--font-body)",
+    letterSpacing: "0.02em",
+  };
+  const selectWrapStyle: React.CSSProperties = {
+    position: "relative",
+    width: "100%",
+  };
+  const selectStyle: React.CSSProperties = {
+    width: "100%",
+    padding: "14px 42px 14px 18px",
+    borderRadius: "10px",
+    fontSize: "15px",
+    background: "rgba(255,255,255,0.92)",
+    border: "1.5px solid rgba(255,255,255,0.7)",
+    color: "#111",
+    outline: "none",
+    fontFamily: "var(--font-body)",
+    appearance: "none",
+    cursor: "pointer",
+    boxSizing: "border-box",
+  };
+
   if (status === "success") {
     return (
       <div
-        className="flex flex-col items-center justify-center text-center py-12 px-6 rounded-xl"
-        style={{
-          background: isGlass ? "rgba(6,12,24,0.72)" : "white",
-          border: isGlass ? "1px solid rgba(255,255,255,0.15)" : "1px solid #e5e7eb",
-          backdropFilter: isGlass ? "blur(16px)" : undefined,
-        }}
+        className="flex flex-col items-center justify-center text-center py-14 px-8 rounded-2xl"
+        style={{ background: cardBg, border: cardBorder, backdropFilter: "blur(20px)" }}
       >
-        <CheckCircle className="mb-4 text-green-400" size={48} />
+        <CheckCircle className="mb-4 text-green-400" size={52} />
         <h3
-          className="text-xl font-bold mb-2"
-          style={{ fontFamily: "var(--font-body)", color: isGlass ? "white" : "#0F1B2D" }}
+          className="text-2xl font-bold mb-2"
+          style={{ fontFamily: "var(--font-body)", color: "white" }}
         >
           We'll Be in Touch Soon!
         </h3>
-        <p className={isGlass ? "text-white/80 text-sm" : "text-gray-600 text-sm"}>
+        <p className="text-white/75 text-sm leading-relaxed">
           Thank you for reaching out. A member of our team will contact you within one business day.
         </p>
-        <p className="mt-4 font-semibold" style={{ color: isGlass ? "#fff" : "#3D6CC0" }}>
+        <p className="mt-5 font-semibold text-white/90">
           Need immediate help? Call{" "}
-          <a href="tel:4022168850" className="underline">
+          <a href="tel:4022168850" className="underline" style={{ color: "#3D6CC0" }}>
             (402) 216-8850
           </a>
         </p>
@@ -122,38 +149,38 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-xl overflow-hidden"
+      className="rounded-2xl overflow-hidden"
       style={{
-        background: isGlass ? "rgba(6,12,24,0.72)" : "white",
-        border: isGlass ? "1px solid rgba(255,255,255,0.18)" : "1px solid #e5e7eb",
-        backdropFilter: isGlass ? "blur(16px)" : undefined,
-        boxShadow: isGlass ? "0 8px 32px rgba(0,0,0,0.4)" : "0 4px 24px rgba(0,0,0,0.08)",
+        background: cardBg,
+        border: cardBorder,
+        backdropFilter: "blur(20px)",
+        boxShadow: "0 12px 48px rgba(0,0,0,0.55)",
       }}
     >
-      {/* Form header */}
-      <div
-        className="px-5 pt-5 pb-4"
-        style={{ borderBottom: isGlass ? "1px solid rgba(255,255,255,0.1)" : "1px solid #f3f4f6" }}
-      >
+      {/* Header */}
+      <div className="px-7 pt-7 pb-5">
         <h3
-          className="text-lg font-bold"
           style={{
             fontFamily: "var(--font-body)",
-            color: isGlass ? "white" : "#0F1B2D",
+            fontSize: "26px",
+            fontWeight: 800,
+            color: "white",
+            lineHeight: 1.2,
+            margin: 0,
           }}
         >
           Get Your Free Consultation
         </h3>
-        <p className={`text-xs mt-0.5 ${isGlass ? "text-white/60" : "text-gray-500"}`}>
+        <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "13px", marginTop: "4px", fontFamily: "var(--font-body)" }}>
           Response within one business day. No obligation.
         </p>
       </div>
 
-      <div className="px-5 py-4 space-y-3">
+      <div className="px-7 pb-7 space-y-4">
         {/* Name row */}
-        <div className="grid grid-cols-2 gap-3">
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
           <div>
-            <label className={labelClass} htmlFor="firstName">First Name *</label>
+            <label style={labelStyle} htmlFor="firstName">First Name <span style={{ color: "#f87171" }}>*</span></label>
             <input
               id="firstName"
               name="firstName"
@@ -162,11 +189,11 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
               placeholder="First Name"
               value={form.firstName}
               onChange={handleChange}
-              className={inputClass}
+              style={inputStyle}
             />
           </div>
           <div>
-            <label className={labelClass} htmlFor="lastName">Last Name *</label>
+            <label style={labelStyle} htmlFor="lastName">Last Name <span style={{ color: "#f87171" }}>*</span></label>
             <input
               id="lastName"
               name="lastName"
@@ -175,15 +202,15 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
               placeholder="Last Name"
               value={form.lastName}
               onChange={handleChange}
-              className={inputClass}
+              style={inputStyle}
             />
           </div>
         </div>
 
         {/* Phone + Email */}
-        <div className="grid grid-cols-2 gap-3">
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
           <div>
-            <label className={labelClass} htmlFor="phone">Phone *</label>
+            <label style={labelStyle} htmlFor="phone">Phone <span style={{ color: "#f87171" }}>*</span></label>
             <input
               id="phone"
               name="phone"
@@ -192,11 +219,11 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
               placeholder="(402) 000-0000"
               value={form.phone}
               onChange={handleChange}
-              className={inputClass}
+              style={inputStyle}
             />
           </div>
           <div>
-            <label className={labelClass} htmlFor="email">Email</label>
+            <label style={labelStyle} htmlFor="email">Email</label>
             <input
               id="email"
               name="email"
@@ -204,90 +231,108 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
               placeholder="you@email.com"
               value={form.email}
               onChange={handleChange}
-              className={inputClass}
+              style={inputStyle}
             />
           </div>
         </div>
 
-        {/* Address */}
+        {/* Address — full width */}
         <div>
-          <label className={labelClass} htmlFor="address">Property Address *</label>
+          <label style={labelStyle} htmlFor="address">Address <span style={{ color: "#f87171" }}>*</span></label>
           <input
             id="address"
             name="address"
             type="text"
             required
-            placeholder="Street address, Omaha, NE"
+            placeholder="Street address"
             value={form.address}
             onChange={handleChange}
-            className={inputClass}
+            style={inputStyle}
           />
         </div>
 
-        {/* Service + Source */}
-        <div className="grid grid-cols-2 gap-3">
-          <div>
-            <label className={labelClass} htmlFor="service">Services Needed</label>
+        {/* Services Needed — full width */}
+        <div>
+          <label style={labelStyle} htmlFor="service">Services Needed <span style={{ color: "#f87171" }}>*</span></label>
+          <div style={selectWrapStyle}>
             <select
               id="service"
               name="service"
               value={form.service}
               onChange={handleChange}
-              className={selectClass}
+              required
+              style={selectStyle}
             >
               <option value="">Select services...</option>
               {SERVICES.map((s) => (
                 <option key={s} value={s}>{s}</option>
               ))}
             </select>
+            <svg
+              style={{ position: "absolute", right: "16px", top: "50%", transform: "translateY(-50%)", pointerEvents: "none" }}
+              width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#555" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+            >
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
           </div>
-          <div>
-            <label className={labelClass} htmlFor="source">How Did You Find Us?</label>
+        </div>
+
+        {/* How Did You Find Us — full width */}
+        <div>
+          <label style={labelStyle} htmlFor="source">How Did You Find Us? <span style={{ color: "#f87171" }}>*</span></label>
+          <div style={selectWrapStyle}>
             <select
               id="source"
               name="source"
               value={form.source}
               onChange={handleChange}
-              className={selectClass}
+              required
+              style={selectStyle}
             >
               <option value="">Select one</option>
               {SOURCES.map((s) => (
                 <option key={s} value={s}>{s}</option>
               ))}
             </select>
+            <svg
+              style={{ position: "absolute", right: "16px", top: "50%", transform: "translateY(-50%)", pointerEvents: "none" }}
+              width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#555" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+            >
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
           </div>
         </div>
 
         {/* Consents */}
-        <div className="space-y-2 pt-1">
-          <label className="flex items-start gap-2 cursor-pointer">
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px", paddingTop: "2px" }}>
+          <label style={{ display: "flex", alignItems: "flex-start", gap: "10px", cursor: "pointer" }}>
             <input
               type="checkbox"
               name="consentMessages"
               checked={form.consentMessages}
               onChange={handleChange}
-              className="mt-0.5 shrink-0 accent-blue-600"
+              style={{ marginTop: "2px", flexShrink: 0, width: "16px", height: "16px", accentColor: "#3D6CC0" }}
             />
-            <span className={`text-xs leading-relaxed ${isGlass ? "text-white/60" : "text-gray-500"}`}>
-              By checking this box, I consent to receive transactional messages from Royalty Roofing and Siding related to my estimate request. Message &amp; data rates may apply. Reply HELP for help or STOP to opt out.
+            <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.55)", lineHeight: 1.6, fontFamily: "var(--font-body)" }}>
+              By checking this box, I consent to receive transactional messages from Royalty Roofing and Siding related to my estimate request. Message frequency may vary. Message &amp; Data rates may apply. Reply HELP for help or STOP to opt out.
             </span>
           </label>
-          <label className="flex items-start gap-2 cursor-pointer">
+          <label style={{ display: "flex", alignItems: "flex-start", gap: "10px", cursor: "pointer" }}>
             <input
               type="checkbox"
               name="consentPrivacy"
               checked={form.consentPrivacy}
               onChange={handleChange}
               required
-              className="mt-0.5 shrink-0 accent-blue-600"
+              style={{ marginTop: "2px", flexShrink: 0, width: "16px", height: "16px", accentColor: "#3D6CC0" }}
             />
-            <span className={`text-xs leading-relaxed ${isGlass ? "text-white/60" : "text-gray-500"}`}>
+            <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.55)", lineHeight: 1.6, fontFamily: "var(--font-body)" }}>
               I have read and agree to the{" "}
               <a
                 href="https://royaltyroofing.org/privacy-policy"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: "#3D6CC0", textDecoration: "underline" }}
+                style={{ color: "#7aaaf0", textDecoration: "underline" }}
               >
                 Privacy Policy
               </a>
@@ -296,30 +341,41 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
           </label>
         </div>
 
-        {/* Submit — blue, rounded-lg */}
+        {/* Submit button — big, blue, Bebas Neue uppercase */}
         <button
           type="submit"
           disabled={status === "loading"}
-          className="w-full flex items-center justify-center gap-2 font-bold text-base py-3.5 rounded-lg transition-all"
           style={{
+            width: "100%",
+            padding: "18px 24px",
             background: "#3D6CC0",
-            color: "#ffffff",
-            fontFamily: "var(--font-body)",
+            color: "white",
             border: "none",
+            borderRadius: "10px",
+            fontSize: "18px",
+            fontFamily: "var(--font-display)",
+            fontWeight: 400,
+            letterSpacing: "0.12em",
             cursor: status === "loading" ? "not-allowed" : "pointer",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "8px",
+            transition: "background 0.2s",
+            marginTop: "4px",
           }}
           onMouseEnter={(e) => { if (status !== "loading") (e.currentTarget as HTMLButtonElement).style.background = "#2d5aad"; }}
           onMouseLeave={(e) => { if (status !== "loading") (e.currentTarget as HTMLButtonElement).style.background = "#3D6CC0"; }}
         >
           {status === "loading" ? (
-            <><Loader2 size={18} className="animate-spin" /> Sending...</>
+            <><Loader2 size={20} className="animate-spin" /> Sending...</>
           ) : (
-            "Get My Free Inspection"
+            "GET MY FREE INSPECTION"
           )}
         </button>
 
         {status === "error" && (
-          <p className="text-red-400 text-xs text-center">
+          <p style={{ color: "#f87171", fontSize: "13px", textAlign: "center", fontFamily: "var(--font-body)" }}>
             Something went wrong. Please call us at (402) 216-8850.
           </p>
         )}
