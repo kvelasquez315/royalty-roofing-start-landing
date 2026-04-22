@@ -15,7 +15,7 @@ const STATS = [
 
 const AWARDS = [
   { src: "/manus-storage/award-2020_17c3d195.png", alt: "Best of Omaha 2020 — Residential Roofing" },
-  { src: "/manus-storage/award-2021-v4_1ef2bc04.png", alt: "Best of Omaha 2021 — Residential Roofing" },
+  { src: "/manus-storage/award-2021-original_09186052.jpg", alt: "Best of Omaha 2021 — Residential Roofing" },
   { src: "/manus-storage/award-2022_6874c154.png", alt: "Best of Omaha 2022 — Residential Siding" },
   { src: "/manus-storage/award-2023_495972e7.png", alt: "Best of Omaha 2023 — Residential Roofing" },
   { src: "/manus-storage/award-2024_81d046f1.png", alt: "Best of Omaha 2024 — Residential Roofing" },
@@ -135,6 +135,7 @@ export default function TrustBar() {
               objectFit: "contain",
               opacity: 0.85,
               transition: "opacity 0.2s, transform 0.2s",
+              mixBlendMode: award.src.includes("2021") ? "multiply" : undefined,
             }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLImageElement).style.opacity = "1";

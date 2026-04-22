@@ -314,7 +314,7 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
           {status === "loading" ? (
             <><Loader2 size={18} className="animate-spin" /> Sending...</>
           ) : (
-            "Request My Free Quote"
+            "Get My Free Inspection"
           )}
         </button>
 
