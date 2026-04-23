@@ -61,11 +61,12 @@ export default function Navbar() {
         }}
       >
         {/* Logo */}
-        <a href="/" style={{ display: "flex", alignItems: "center", flexShrink: 0, textDecoration: "none" }}>
+        <a href="/" style={{ display: "flex", alignItems: "center", flexShrink: 1, minWidth: 0, textDecoration: "none" }}>
           <img
             src={LOGO}
             alt="Royalty Roofing and Siding"
-            style={{ height: "60px", width: "auto", objectFit: "contain", display: "block" }}
+            className="nav-logo"
+            style={{ height: "56px", width: "auto", maxWidth: "100%", objectFit: "contain", display: "block" }}
           />
         </a>
 
@@ -256,6 +257,28 @@ export default function Navbar() {
           </button>
         </div>
       )}
+      {/* Mobile nav responsive styles */}
+      <style>{`
+        @media (max-width: 640px) {
+          .nav-logo {
+            height: 44px !important;
+            max-width: 220px !important;
+          }
+          nav {
+            height: 64px !important;
+            padding: 0 14px !important;
+          }
+        }
+        @media (min-width: 641px) and (max-width: 1023px) {
+          .nav-logo {
+            height: 50px !important;
+            max-width: 260px !important;
+          }
+          nav {
+            height: 72px !important;
+          }
+        }
+      `}</style>
     </header>
   );
 }

@@ -220,10 +220,16 @@ Repairs done right. Replacements only when necessary. We're out to your home fas
           .hero-mobile-cta {
             display: flex !important;
           }
+          #hero {
+            padding-top: 94px !important;
+          }
         }
         @media (max-width: 480px) {
           .hero-grid {
             padding: 20px 14px 100px !important;
+          }
+          #hero {
+            padding-top: 90px !important;
           }
         }
       `}</style>
