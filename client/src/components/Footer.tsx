@@ -22,7 +22,7 @@ export default function Footer() {
           {/* Col 1: Logo + tagline */}
           <div>
             <img
-              src="/manus-storage/logo-color_580bd378.webp"
+              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663367059095/jgBpqGuFanZshxxZ.webp"
               alt="Royalty Roofing and Siding"
               style={{ height: "52px", width: "auto", marginBottom: "16px" }}
             />

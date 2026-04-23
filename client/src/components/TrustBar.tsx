@@ -14,13 +14,13 @@ const STATS = [
 ];
 
 const AWARDS = [
-  { src: "/manus-storage/award-2020-tight_2c655ed7.png", alt: "Best of Omaha 2020, Residential Roofing" },
-  { src: "/manus-storage/award-2021-siding-tight_4bcbdccc.png", alt: "Best of Omaha 2021, Residential Siding" },
-  { src: "/manus-storage/award-2022-tight_0908fdf7.png", alt: "Best of Omaha 2022, Residential Siding" },
-  { src: "/manus-storage/award-2023-tight_f5561885.png", alt: "Best of Omaha 2023, Residential Roofing" },
-  { src: "/manus-storage/award-2024-tight_38bb35a8.png", alt: "Best of Omaha 2024, Residential Roofing" },
-  { src: "/manus-storage/award-2025-tight_cf8da63c.png", alt: "Best of Omaha 2025, Residential Roofing" },
-  { src: "/manus-storage/award-2026-tight_93177d4e.png", alt: "Best of Omaha 2026, Residential Siding" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663367059095/YxnCUKTKTxhmuQvH.png", alt: "Best of Omaha 2020, Residential Roofing" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663367059095/sSfzxxmSoIYevjBW.png", alt: "Best of Omaha 2021, Residential Siding" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663367059095/AlAJNKLYxnwKLRzc.png", alt: "Best of Omaha 2022, Residential Siding" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663367059095/wiTUJNMXftSBXyRb.png", alt: "Best of Omaha 2023, Residential Roofing" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663367059095/AXiRtluyUJdIhZod.png", alt: "Best of Omaha 2024, Residential Roofing" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663367059095/OvgQUnyKHjflghyH.png", alt: "Best of Omaha 2025, Residential Roofing" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663367059095/qvfYCjTxkEEEsbbp.png", alt: "Best of Omaha 2026, Residential Siding" },
 ];
 
 function AnimatedStat({ display }: { display: string }) {

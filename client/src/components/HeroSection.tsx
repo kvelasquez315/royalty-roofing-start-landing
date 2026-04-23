@@ -4,12 +4,12 @@
  * dark overlay, trust badge cluster left, glass form right
  * Mobile: stacked layout, form shown below headline, badges wrap
  * CDN: house-front_d3955cbd.webp
- * BBB logo: /manus-storage/bbb-logo_754ca503.png
+ * BBB logo: https://files.manuscdn.com/user_upload_by_module/session_file/310519663367059095/OvrIKRhrXjOUvBsh.png
  */
 import EstimateForm from "./EstimateForm";
 
-const HOUSE_FRONT = "/manus-storage/house-front_d3955cbd.webp";
-const BBB_LOGO = "/manus-storage/bbb-logo_754ca503.png";
+const HOUSE_FRONT = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663367059095/BiCzvrohQrhLekiI.webp";
+const BBB_LOGO = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663367059095/OvrIKRhrXjOUvBsh.png";
 
 const badgeStyle: React.CSSProperties = {
   display: "flex",

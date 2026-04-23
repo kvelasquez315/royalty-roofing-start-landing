@@ -6,7 +6,7 @@
  * - No gold, no icon-in-circle, no floating badge
  */
 
-const ROOF_PHOTO = "/manus-storage/roof-photo_e4f52063.webp";
+const ROOF_PHOTO = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663367059095/bvHlWzgAoNLMEtcN.webp";
 
 const PROOF_BLOCKS = [
   {

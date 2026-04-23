@@ -7,8 +7,8 @@
  * - Blue CTA
  */
 
-const TEAM_1 = "/manus-storage/team-1_66735c42.webp";
-const TEAM_2 = "/manus-storage/team-2_e7e452e5.webp";
+const TEAM_1 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663367059095/UZteEbGBLmvFwkIW.webp";
+const TEAM_2 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663367059095/USLiBmemGdALLysr.webp";
 
 export default function TeamBannerSection() {
   return (

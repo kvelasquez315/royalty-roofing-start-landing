@@ -6,7 +6,7 @@
  */
 import { useState } from "react";
 
-const LOGO = "/manus-storage/logo-color_580bd378.webp";
+const LOGO = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663367059095/jgBpqGuFanZshxxZ.webp";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
