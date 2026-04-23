@@ -15,7 +15,7 @@ const STATS = [
 
 const AWARDS = [
   { src: "/manus-storage/award-2020-tight_2c655ed7.png", alt: "Best of Omaha 2020, Residential Roofing" },
-  { src: "/manus-storage/award-2021-tight_245f0b6c.png", alt: "Best of Omaha 2021, Residential Roofing" },
+  { src: "/manus-storage/award-2021-siding-tight_4bcbdccc.png", alt: "Best of Omaha 2021, Residential Siding" },
   { src: "/manus-storage/award-2022-tight_0908fdf7.png", alt: "Best of Omaha 2022, Residential Siding" },
   { src: "/manus-storage/award-2023-tight_f5561885.png", alt: "Best of Omaha 2023, Residential Roofing" },
   { src: "/manus-storage/award-2024-tight_38bb35a8.png", alt: "Best of Omaha 2024, Residential Roofing" },
