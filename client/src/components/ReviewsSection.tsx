@@ -5,7 +5,6 @@
  * - Bebas Neue headline, DM Sans body
  * - White cards, SVG stars, Google G mark, text link CTA
  */
-import { ExternalLink } from "lucide-react";
 
 const REVIEWS = [
   {
@@ -152,30 +151,7 @@ export default function ReviewsSection() {
           ))}
         </div>
 
-        {/* CTA */}
-        <div style={{ textAlign: "center", marginTop: "40px" }}>
-          <a
-            href="https://www.google.com/search?q=Royalty+Roofing+and+Siding+Omaha+reviews"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "6px",
-              color: "rgba(255,255,255,0.6)",
-              fontFamily: "var(--font-body)",
-              fontWeight: 500,
-              fontSize: "14px",
-              textDecoration: "none",
-              transition: "color 0.15s",
-            }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "white"; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.6)"; }}
-          >
-            <ExternalLink size={14} />
-            Read More Reviews on Google
-          </a>
-        </div>
+
       </div>
 
       {/* Responsive */}
