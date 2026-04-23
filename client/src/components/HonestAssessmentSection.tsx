@@ -2,8 +2,7 @@
  * HonestAssessmentSection — "Why Royalty" differentiator
  * id="why-royalty"
  * - Light off-white bg (#F5F5F3)
- * - Left: Bebas Neue large headline + DM Sans body + proof blocks + CTA
- * - Right: aerial rooftop photo with truck
+ * - Full-width headline above two-column grid (text left, photo right)
  * - No gold, no icon-in-circle, no floating badge
  */
 
@@ -40,157 +39,162 @@ export default function HonestAssessmentSection() {
           maxWidth: "1280px",
           margin: "0 auto",
           padding: "0 28px",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "64px",
-          alignItems: "center",
         }}
-        className="why-grid"
       >
-        {/* LEFT: Text */}
-        <div>
-          {/* Eyebrow */}
-          <p
-            style={{
-              fontFamily: "var(--font-body)",
-              fontWeight: 600,
-              fontSize: "11px",
-              letterSpacing: "0.16em",
-              textTransform: "uppercase",
-              color: "#3D6CC0",
-              marginBottom: "14px",
-            }}
-          >
-            Why Homeowners Choose Royalty
-          </p>
+        {/* Full-width eyebrow + headline */}
+        <p
+          style={{
+            fontFamily: "var(--font-body)",
+            fontWeight: 600,
+            fontSize: "11px",
+            letterSpacing: "0.16em",
+            textTransform: "uppercase",
+            color: "#3D6CC0",
+            marginBottom: "14px",
+          }}
+        >
+          Why Homeowners Choose Royalty
+        </p>
 
-          {/* Bebas Neue headline */}
-          <h2
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(44px, 5vw, 64px)",
-              lineHeight: 0.95,
-              color: "#0A1220",
-              margin: "0 0 24px",
-              letterSpacing: "0.01em",
-            }}
-          >
-            WE COME TO YOUR HOME, GET ON YOUR ROOF, AND GIVE YOU A STRAIGHT ANSWER ON WHAT IT<br />
-            <span style={{ color: "#3D6CC0" }}>ACTUALLY NEEDS.</span>
-          </h2>
+        <h2
+          style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "clamp(44px, 6vw, 80px)",
+            lineHeight: 0.95,
+            color: "#0A1220",
+            margin: "0 0 48px",
+            letterSpacing: "0.01em",
+          }}
+        >
+          WE COME TO YOUR HOME, GET ON YOUR ROOF, AND GIVE YOU A STRAIGHT ANSWER ON WHAT IT{" "}
+          <span style={{ color: "#3D6CC0" }}>ACTUALLY NEEDS.</span>
+        </h2>
 
-          {/* Body copy */}
-          <p
-            style={{
-              fontFamily: "var(--font-body)",
-              fontSize: "16px",
-              color: "#4B5563",
-              lineHeight: 1.75,
-              marginBottom: "36px",
-              maxWidth: "520px",
-            }}
-          >
-            We show up when we say we will, take on jobs of every size, and only recommend what your roof actually needs. If you have storm damage, we take the insurance process off your plate entirely.
-          </p>
+        {/* Two-column grid: text left, photo right */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "64px",
+            alignItems: "start",
+          }}
+          className="why-grid"
+        >
+          {/* LEFT: Body + proof blocks + CTA */}
+          <div>
+            {/* Body copy */}
+            <p
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "16px",
+                color: "#4B5563",
+                lineHeight: 1.75,
+                marginBottom: "36px",
+                maxWidth: "520px",
+              }}
+            >
+              We show up when we say we will, take on jobs of every size, and only recommend what your roof actually needs. If you have storm damage, we take the insurance process off your plate entirely.
+            </p>
 
-          {/* Proof blocks */}
-          <div style={{ marginBottom: "40px" }}>
-            {PROOF_BLOCKS.map(({ label, desc }, i) => (
-              <div
-                key={i}
-                style={{
-                  display: "flex",
-                  gap: "16px",
-                  marginBottom: "24px",
-                  paddingBottom: "24px",
-                  borderBottom: i < PROOF_BLOCKS.length - 1 ? "1px solid rgba(0,0,0,0.07)" : "none",
-                }}
-              >
-                {/* Number */}
+            {/* Proof blocks */}
+            <div style={{ marginBottom: "40px" }}>
+              {PROOF_BLOCKS.map(({ label, desc }, i) => (
                 <div
+                  key={i}
                   style={{
-                    flexShrink: 0,
-                    fontFamily: "var(--font-display)",
-                    fontSize: "42px",
-                    lineHeight: 1,
-                    color: "#3D6CC0",
-                    opacity: 0.55,
-                    marginTop: "0px",
-                    minWidth: "52px",
+                    display: "flex",
+                    gap: "16px",
+                    marginBottom: "24px",
+                    paddingBottom: "24px",
+                    borderBottom: i < PROOF_BLOCKS.length - 1 ? "1px solid rgba(0,0,0,0.07)" : "none",
                   }}
                 >
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-                <div>
-                  <p
+                  {/* Number */}
+                  <div
                     style={{
-                      fontFamily: "var(--font-body)",
-                      fontWeight: 700,
-                      fontSize: "15px",
-                      color: "#0A1220",
-                      marginBottom: "4px",
-                      lineHeight: 1.4,
+                      flexShrink: 0,
+                      fontFamily: "var(--font-display)",
+                      fontSize: "42px",
+                      lineHeight: 1,
+                      color: "#3D6CC0",
+                      opacity: 0.55,
+                      marginTop: "0px",
+                      minWidth: "52px",
                     }}
                   >
-                    {label}
-                  </p>
-                  <p
-                    style={{
-                      fontFamily: "var(--font-body)",
-                      fontSize: "14px",
-                      color: "#6B7280",
-                      lineHeight: 1.65,
-                    }}
-                  >
-                    {desc}
-                  </p>
+                    {String(i + 1).padStart(2, "0")}
+                  </div>
+                  <div>
+                    <p
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontWeight: 700,
+                        fontSize: "15px",
+                        color: "#0A1220",
+                        marginBottom: "4px",
+                        lineHeight: 1.4,
+                      }}
+                    >
+                      {label}
+                    </p>
+                    <p
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontSize: "14px",
+                        color: "#6B7280",
+                        lineHeight: 1.65,
+                      }}
+                    >
+                      {desc}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            {/* CTA */}
+            <button
+              onClick={scrollToForm}
+              style={{
+                background: "#3D6CC0",
+                color: "white",
+                fontFamily: "var(--font-body)",
+                fontWeight: 700,
+                fontSize: "15px",
+                padding: "14px 32px",
+                borderRadius: "6px",
+                border: "none",
+                cursor: "pointer",
+                letterSpacing: "0.02em",
+                transition: "background 0.15s, transform 0.15s",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.background = "#2d5aad";
+                (e.currentTarget as HTMLButtonElement).style.transform = "translateY(-1px)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.background = "#3D6CC0";
+                (e.currentTarget as HTMLButtonElement).style.transform = "translateY(0)";
+              }}
+            >
+              Schedule a Free Inspection →
+            </button>
           </div>
 
-          {/* CTA */}
-          <button
-            onClick={scrollToForm}
-            style={{
-              background: "#3D6CC0",
-              color: "white",
-              fontFamily: "var(--font-body)",
-              fontWeight: 700,
-              fontSize: "15px",
-              padding: "14px 32px",
-              borderRadius: "6px",
-              border: "none",
-              cursor: "pointer",
-              letterSpacing: "0.02em",
-              transition: "background 0.15s, transform 0.15s",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLButtonElement).style.background = "#2d5aad";
-              (e.currentTarget as HTMLButtonElement).style.transform = "translateY(-1px)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLButtonElement).style.background = "#3D6CC0";
-              (e.currentTarget as HTMLButtonElement).style.transform = "translateY(0)";
-            }}
-          >
-            Schedule a Free Inspection →
-          </button>
-        </div>
-
-        {/* RIGHT: Photo */}
-        <div>
-          <img
-            src={HERO_BG}
-            alt="Royalty Roofing crew completing a residential roofing project in Omaha"
-            style={{
-              width: "100%",
-              height: "520px",
-              objectFit: "cover",
-              borderRadius: "8px",
-              boxShadow: "0 20px 60px rgba(0,0,0,0.14)",
-            }}
-          />
+          {/* RIGHT: Photo */}
+          <div>
+            <img
+              src={HERO_BG}
+              alt="Royalty Roofing crew completing a residential roofing project in Omaha"
+              style={{
+                width: "100%",
+                height: "520px",
+                objectFit: "cover",
+                borderRadius: "8px",
+                boxShadow: "0 20px 60px rgba(0,0,0,0.14)",
+              }}
+            />
+          </div>
         </div>
       </div>
 
@@ -200,12 +204,14 @@ export default function HonestAssessmentSection() {
           .why-grid {
             grid-template-columns: 1fr !important;
             gap: 40px !important;
-            padding: 0 16px !important;
           }
         }
         @media (max-width: 640px) {
           #why-royalty {
             padding: 64px 0 !important;
+          }
+          #why-royalty > div {
+            padding: 0 16px !important;
           }
         }
       `}</style>
