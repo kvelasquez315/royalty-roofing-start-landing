@@ -100,7 +100,7 @@ export default function HeroSection() {
               letterSpacing: "0.01em",
             }}
           >
-            WE INSPECT YOUR ROOF FOR FREE AND ONLY RECOMMEND A REPLACEMENT IF YOU TRULY NEED ONE.
+            WE INSPECT YOUR ROOF FOR FREE AND ONLY RECOMMEND A REPLACEMENT, ONLY IF YOU TRULY NEED ONE.
           </h1>
 
           {/* Sub-copy */}
