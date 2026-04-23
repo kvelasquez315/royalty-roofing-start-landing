@@ -6,7 +6,7 @@
  */
 import { useState } from "react";
 
-const LOGO = "/manus-storage/logo-white_d1fb2924.png";
+const LOGO = "/manus-storage/logo-white-tight_7b02edfe.png";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
