@@ -100,7 +100,7 @@ export default function HeroSection() {
               letterSpacing: "0.01em",
             }}
           >
-            WE INSPECT YOUR ROOF FOR FREE AND ONLY RECOMMEND A REPLACEMENT IF YOU TRULY NEED ONE.
+WE SHOW UP FAST, DO THE JOB RIGHT, AND NEVER SELL YOU MORE THAN YOU NEED.
           </h1>
 
           {/* Sub-copy */}
@@ -115,7 +115,7 @@ export default function HeroSection() {
               marginBottom: "28px",
             }}
           >
-            Most roofers show up and quote a full replacement. We get on your roof, document everything with photos, and give you an honest written assessment. If a repair will do the job, that's what we'll recommend. Omaha's most trusted roofer since 2010.
+Repairs done right. Replacements only when necessary. We're out to your home fast, we handle jobs of any size, and if you have storm damage we work directly with your insurance company from start to finish.
           </p>
 
           {/* Trust badge cluster */}

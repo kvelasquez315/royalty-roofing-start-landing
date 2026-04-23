@@ -150,110 +150,11 @@ export default function Navbar() {
             Free Estimate
           </button>
 
-          {/* Hamburger — mobile only */}
-          <button
-            className="lg:hidden"
-            onClick={() => setMenuOpen(!menuOpen)}
-            style={{
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              padding: "8px",
-              color: "white",
-              display: "flex",
-              flexDirection: "column",
-              gap: "5px",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-            aria-label="Toggle menu"
-          >
-            <span style={{ display: "block", width: "24px", height: "2px", background: "#0F1B2D", borderRadius: "2px", transition: "transform 0.2s", transform: menuOpen ? "rotate(45deg) translate(5px, 5px)" : "none" }} />
-            <span style={{ display: "block", width: "24px", height: "2px", background: "#0F1B2D", borderRadius: "2px", opacity: menuOpen ? 0 : 1, transition: "opacity 0.2s" }} />
-            <span style={{ display: "block", width: "24px", height: "2px", background: "#0F1B2D", borderRadius: "2px", transition: "transform 0.2s", transform: menuOpen ? "rotate(-45deg) translate(5px, -5px)" : "none" }} />
-          </button>
+
         </div>
       </nav>
 
-      {/* Mobile dropdown menu */}
-      {menuOpen && (
-        <div
-          style={{
-          background: "#ffffff",
-          borderBottom: "1px solid #e5e7eb",
-            padding: "8px 0 16px",
-          }}
-          className="lg:hidden"
-        >
-          {NAV_LINKS.map(({ label, id }) => (
-            <button
-              key={id}
-              onClick={() => scrollTo(id)}
-              style={{
-                display: "block",
-                width: "100%",
-                textAlign: "left",
-                background: "none",
-                border: "none",
-              color: "#0F1B2D",
-              fontFamily: "var(--font-body)",
-              fontWeight: 600,
-              fontSize: "17px",
-              padding: "14px 24px",
-              cursor: "pointer",
-              borderBottom: "1px solid #f3f4f6",
-                letterSpacing: "0.02em",
-              }}
-            >
-              {label}
-            </button>
-          ))}
-          <div style={{ padding: "16px 24px 0", display: "flex", gap: "12px" }}>
-            <a
-              href="tel:4022168850"
-              style={{
-                flex: 1,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "8px",
-                background: "rgba(0,0,0,0.05)",
-                color: "#0F1B2D",
-                fontFamily: "var(--font-body)",
-                fontWeight: 700,
-                fontSize: "15px",
-                padding: "13px 16px",
-                borderRadius: "8px",
-                textDecoration: "none",
-                border: "1px solid #e5e7eb",
-              }}
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-              Call Now
-            </a>
-            <button
-              onClick={() => scrollTo("bottom-form")}
-              style={{
-                flex: 1,
-                background: "#3D6CC0",
-                color: "white",
-                fontFamily: "var(--font-body)",
-                fontWeight: 700,
-                fontSize: "15px",
-                padding: "13px 16px",
-                borderRadius: "8px",
-                border: "none",
-                cursor: "pointer",
-                letterSpacing: "0.02em",
-              }}
-            >
-              Free Estimate
-            </button>
-          </div>
-        </div>
-      )}
+
     </header>
   );
 }

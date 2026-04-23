@@ -11,20 +11,20 @@ const HERO_BG = "/manus-storage/hero-bg_0ebd1de5.webp";
 
 const PROOF_BLOCKS = [
   {
-    label: "Free roof inspection: we get on the roof, not just look from the driveway",
-    desc: "We physically inspect every section, document everything with photos, and give you a written assessment. You see exactly what we see.",
+    label: "We're out fast",
+    desc: "We don't make you wait weeks for a quote. We get to your home quickly, get on the roof, and give you a straight answer on what it needs.",
   },
   {
-    label: "We quote repairs first, not replacements",
-    desc: "Most companies push full replacements because the margin is higher. If your roof can be repaired, we'll tell you that and do the repair right.",
+    label: "We do repairs, not just replacements",
+    desc: "A lot of companies won't bother with smaller jobs. We do. If a repair is all you need, that's what we'll quote. No pressure to replace something that still has life in it.",
   },
   {
-    label: "Storm damage? We handle the entire insurance claim",
-    desc: "We work directly with your adjuster from first contact to final payment. You don't have to fight the insurance company alone.",
+    label: "We handle your insurance claim",
+    desc: "Storm damage is stressful enough. We work directly with your adjuster from the first call to the final payment so you don't have to fight that battle alone.",
   },
   {
-    label: "Every job backed by a written workmanship warranty",
-    desc: "We stand behind our work. Every repair and replacement comes with a written warranty, not just a handshake.",
+    label: "Every job backed by a written warranty",
+    desc: "We stand behind our work. Every repair and replacement comes with a written workmanship warranty.",
   },
 ];
 
@@ -75,8 +75,8 @@ export default function HonestAssessmentSection() {
               letterSpacing: "0.01em",
             }}
           >
-            WE COME TO YOUR HOME, GET ON YOUR ROOF, AND GIVE YOU A STRAIGHT ANSWER ON WHAT IT<br />
-            <span style={{ color: "#3D6CC0" }}>ACTUALLY NEEDS.</span>
+            FAST RESPONSE. HONEST WORK. WE HANDLE THE SMALL JOBS AND THE<br />
+            <span style={{ color: "#3D6CC0" }}>BIG INSURANCE CLAIMS.</span>
           </h2>
 
           {/* Body copy */}
@@ -90,7 +90,7 @@ export default function HonestAssessmentSection() {
               maxWidth: "520px",
             }}
           >
-            Most roofing companies skip the inspection and go straight to quoting a replacement. We don't. We get on your roof, document what we find, and give you a straight answer: repair or replace. No pressure, no upsell, no guessing.
+            We show up when we say we will, take on jobs of every size, and only recommend what your roof actually needs. If you have storm damage, we take the insurance process off your plate entirely.
           </p>
 
           {/* Proof blocks */}
