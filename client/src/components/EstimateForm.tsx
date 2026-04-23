@@ -39,7 +39,7 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
     }
     setStatus("loading");
     try {
-      const webhookUrl = import.meta.env.VITE_FORM_WEBHOOK_URL;
+      const webhookUrl = import.meta.env.VITE_FORM_WEBHOOK_URL || "https://services.leadconnectorhq.com/hooks/2HOx7nqhyy85pwGlIHvA/webhook-trigger/nl9HCf4tULqBC1DFj3uX";
       if (webhookUrl) {
         await fetch(webhookUrl, {
           method: "POST",
