@@ -6,7 +6,7 @@
  * - No gold, no icon-in-circle, no floating badge
  */
 
-const HERO_BG = "/manus-storage/hero-bg_0ebd1de5.webp";
+const ROOF_PHOTO = "/manus-storage/roof-photo_e4f52063.webp";
 
 const PROOF_BLOCKS = [
   {
@@ -184,7 +184,7 @@ export default function HonestAssessmentSection() {
           {/* RIGHT: Photo */}
           <div>
             <img
-              src={HERO_BG}
+              src={ROOF_PHOTO}
               alt="Royalty Roofing crew completing a residential roofing project in Omaha"
               style={{
                 width: "100%",
