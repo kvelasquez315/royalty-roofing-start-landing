@@ -78,7 +78,7 @@ export default function ReviewsSection() {
               letterSpacing: "0.01em",
             }}
           >
-            THOUSANDS OF OMAHA HOMEOWNERS HAVE TRUSTED US WITH THEIR ROOF AND<br />
+            THOUSANDS OF OMAHA HOMEOWNERS HAVE TRUSTED US WITH THEIR ROOF AND{" "}
             <span style={{ color: "#3D6CC0" }}>GIVEN US 4.9 STARS ON GOOGLE.</span>
           </h2>
         </div>
@@ -146,31 +146,20 @@ export default function ReviewsSection() {
       <style>{`
         @media (max-width: 640px) {
           #reviews {
-            padding: 56px 0 !important;
+            padding: 48px 0 !important;
           }
           #reviews > div {
-            padding: 0 !important;
+            padding: 0 16px !important;
           }
           #reviews .reviews-header {
-            padding: 0 16px !important;
-            margin-bottom: 32px !important;
+            margin-bottom: 28px !important;
           }
           .reviews-grid {
-            display: flex !important;
-            flex-direction: row !important;
-            overflow-x: auto !important;
-            -webkit-overflow-scrolling: touch !important;
+            grid-template-columns: 1fr !important;
             gap: 14px !important;
-            padding: 0 16px 16px !important;
-            scroll-snap-type: x mandatory !important;
-          }
-          .reviews-grid > div {
-            min-width: 280px !important;
-            flex-shrink: 0 !important;
-            scroll-snap-align: start !important;
           }
         }
-        @media (min-width: 640px) and (max-width: 900px) {
+        @media (min-width: 641px) and (max-width: 900px) {
           .reviews-grid {
             grid-template-columns: repeat(2, 1fr) !important;
           }
