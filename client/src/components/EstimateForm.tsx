@@ -12,37 +12,13 @@ interface EstimateFormProps {
   variant?: "glass" | "card";
 }
 
-const SERVICES = [
-  "Roof Repair",
-  "Roof Replacement",
-  "Siding",
-  "Gutters",
-  "Windows",
-  "Doors",
-  "Storm Damage",
-  "Not Sure",
-];
-
-const SOURCES = [
-  "Google Search",
-  "Friend or Family Referral",
-  "Facebook",
-  "Instagram",
-  "Nextdoor",
-  "Yard Sign",
-  "Other",
-];
-
 export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
     phone: "",
-    email: "",
     address: "",
-    service: "",
-    source: "",
     consentMessages: false,
     consentPrivacy: false,
   });
@@ -101,25 +77,6 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
     fontFamily: "var(--font-body)",
     letterSpacing: "0.02em",
   };
-  const selectWrapStyle: React.CSSProperties = {
-    position: "relative",
-    width: "100%",
-  };
-  const selectStyle: React.CSSProperties = {
-    width: "100%",
-    padding: "14px 42px 14px 18px",
-    borderRadius: "10px",
-    fontSize: "15px",
-    background: "rgba(255,255,255,0.92)",
-    border: "1.5px solid rgba(255,255,255,0.7)",
-    color: "#111",
-    outline: "none",
-    fontFamily: "var(--font-body)",
-    appearance: "none",
-    cursor: "pointer",
-    boxSizing: "border-box",
-  };
-
   if (status === "success") {
     return (
       <div
@@ -207,33 +164,19 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
           </div>
         </div>
 
-        {/* Phone + Email */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }} className="form-two-col">
-          <div>
-            <label style={labelStyle} htmlFor="phone">Phone <span style={{ color: "#f87171" }}>*</span></label>
-            <input
-              id="phone"
-              name="phone"
-              type="tel"
-              required
-              placeholder="(402) 000-0000"
-              value={form.phone}
-              onChange={handleChange}
-              style={inputStyle}
-            />
-          </div>
-          <div>
-            <label style={labelStyle} htmlFor="email">Email</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="you@email.com"
-              value={form.email}
-              onChange={handleChange}
-              style={inputStyle}
-            />
-          </div>
+        {/* Phone — full width */}
+        <div>
+          <label style={labelStyle} htmlFor="phone">Phone <span style={{ color: "#f87171" }}>*</span></label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            required
+            placeholder="(402) 000-0000"
+            value={form.phone}
+            onChange={handleChange}
+            style={inputStyle}
+          />
         </div>
 
         {/* Address — full width */}
@@ -249,58 +192,6 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
             onChange={handleChange}
             style={inputStyle}
           />
-        </div>
-
-        {/* Services Needed — full width */}
-        <div>
-          <label style={labelStyle} htmlFor="service">Services Needed <span style={{ color: "#f87171" }}>*</span></label>
-          <div style={selectWrapStyle}>
-            <select
-              id="service"
-              name="service"
-              value={form.service}
-              onChange={handleChange}
-              required
-              style={selectStyle}
-            >
-              <option value="">Select services...</option>
-              {SERVICES.map((s) => (
-                <option key={s} value={s}>{s}</option>
-              ))}
-            </select>
-            <svg
-              style={{ position: "absolute", right: "16px", top: "50%", transform: "translateY(-50%)", pointerEvents: "none" }}
-              width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#555" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
-            >
-              <polyline points="6 9 12 15 18 9"/>
-            </svg>
-          </div>
-        </div>
-
-        {/* How Did You Find Us — full width */}
-        <div>
-          <label style={labelStyle} htmlFor="source">How Did You Find Us? <span style={{ color: "#f87171" }}>*</span></label>
-          <div style={selectWrapStyle}>
-            <select
-              id="source"
-              name="source"
-              value={form.source}
-              onChange={handleChange}
-              required
-              style={selectStyle}
-            >
-              <option value="">Select one</option>
-              {SOURCES.map((s) => (
-                <option key={s} value={s}>{s}</option>
-              ))}
-            </select>
-            <svg
-              style={{ position: "absolute", right: "16px", top: "50%", transform: "translateY(-50%)", pointerEvents: "none" }}
-              width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#555" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
-            >
-              <polyline points="6 9 12 15 18 9"/>
-            </svg>
-          </div>
         </div>
 
         {/* Consents */}
