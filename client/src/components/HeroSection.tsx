@@ -31,7 +31,7 @@ export default function HeroSection() {
         minHeight: "100vh",
         display: "flex",
         alignItems: "flex-start",
-        paddingTop: "110px",
+        paddingTop: "126px",
         overflow: "hidden",
       }}
     >

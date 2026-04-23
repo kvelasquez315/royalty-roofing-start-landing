@@ -58,15 +58,15 @@ export default function Navbar() {
           alignItems: "center",
           justifyContent: "space-between",
           padding: "0 20px",
-          height: "80px",
+          height: "96px",
         }}
       >
         {/* Logo */}
-        <a href="/" style={{ display: "flex", alignItems: "stretch", flexShrink: 0, textDecoration: "none", padding: "8px 0", height: "100%" }}>
+        <a href="/" style={{ display: "flex", alignItems: "center", flexShrink: 0, textDecoration: "none" }}>
           <img
             src={LOGO}
             alt="Royalty Roofing and Siding"
-            style={{ height: "100%", width: "auto", objectFit: "contain", maxWidth: "280px" }}
+            style={{ height: "72px", width: "auto", objectFit: "contain", display: "block" }}
           />
         </a>
 
