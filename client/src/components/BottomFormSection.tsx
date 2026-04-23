@@ -126,13 +126,13 @@ export default function BottomFormSection() {
         @media (max-width: 900px) {
           .bottom-form-grid {
             grid-template-columns: 1fr !important;
-            gap: 40px !important;
+            gap: 36px !important;
             padding: 0 16px !important;
           }
         }
         @media (max-width: 640px) {
           #bottom-form {
-            padding: 64px 0 80px !important;
+            padding: 56px 0 100px !important;
           }
         }
       `}</style>

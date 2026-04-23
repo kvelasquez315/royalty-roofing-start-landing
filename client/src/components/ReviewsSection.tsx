@@ -67,7 +67,7 @@ export default function ReviewsSection() {
     <section id="reviews" style={{ background: "#0A1220", padding: "96px 0" }}>
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 28px" }}>
         {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: "56px" }}>
+        <div className="reviews-header" style={{ textAlign: "center", marginBottom: "56px" }}>
 
           <h2
             style={{
@@ -145,19 +145,37 @@ export default function ReviewsSection() {
       {/* Responsive */}
       <style>{`
         @media (max-width: 640px) {
-          .reviews-grid {
-            grid-template-columns: 1fr !important;
-          }
           #reviews {
-            padding: 64px 0 !important;
+            padding: 56px 0 !important;
           }
           #reviews > div {
+            padding: 0 !important;
+          }
+          #reviews .reviews-header {
             padding: 0 16px !important;
+            margin-bottom: 32px !important;
+          }
+          .reviews-grid {
+            display: flex !important;
+            flex-direction: row !important;
+            overflow-x: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+            gap: 14px !important;
+            padding: 0 16px 16px !important;
+            scroll-snap-type: x mandatory !important;
+          }
+          .reviews-grid > div {
+            min-width: 280px !important;
+            flex-shrink: 0 !important;
+            scroll-snap-align: start !important;
           }
         }
         @media (min-width: 640px) and (max-width: 900px) {
           .reviews-grid {
             grid-template-columns: repeat(2, 1fr) !important;
+          }
+          #reviews > div {
+            padding: 0 20px !important;
           }
         }
       `}</style>

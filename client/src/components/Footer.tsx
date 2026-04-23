@@ -161,10 +161,10 @@ export default function Footer() {
         @media (max-width: 640px) {
           footer .grid {
             grid-template-columns: 1fr !important;
-            gap: 32px !important;
+            gap: 28px !important;
           }
           footer .w-full {
-            padding: 40px 20px !important;
+            padding: 40px 16px 90px !important;
           }
         }
       `}</style>

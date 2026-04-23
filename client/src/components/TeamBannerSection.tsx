@@ -171,17 +171,17 @@ export default function TeamBannerSection() {
         @media (max-width: 900px) {
           .team-grid {
             grid-template-columns: 1fr !important;
-            gap: 40px !important;
+            gap: 36px !important;
             padding: 0 16px !important;
           }
         }
         @media (max-width: 640px) {
           #team {
-            padding: 64px 0 !important;
+            padding: 56px 0 !important;
           }
           .team-photos {
             grid-template-columns: 1fr 1fr !important;
-            gap: 12px !important;
+            gap: 10px !important;
           }
           .team-photos > div {
             aspect-ratio: 3/4 !important;

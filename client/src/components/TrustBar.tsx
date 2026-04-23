@@ -99,6 +99,7 @@ export default function TrustBar() {
       <div className="awards-strip" style={{ background: "#ffffff", borderTop: "1px solid #e5e7eb", padding: "48px 28px" }}>
         {/* Award badges row */}
         <div
+          className="awards-inner"
           style={{
             maxWidth: "1280px",
             margin: "0 auto",
@@ -139,18 +140,28 @@ export default function TrustBar() {
       <style>{`
         @media (max-width: 640px) {
           .stats-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-            gap: 28px !important;
-            padding: 40px 20px 36px !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 0 !important;
+            padding: 32px 12px 28px !important;
           }
           .stats-grid > div {
             border-right: none !important;
+            padding: 0 8px !important;
           }
           .awards-strip {
-            padding: 32px 16px !important;
+            padding: 24px 0 !important;
+            overflow-x: auto !important;
+            -webkit-overflow-scrolling: touch !important;
           }
-          .awards-strip img {
-            height: 90px !important;
+          .awards-inner {
+            flex-wrap: nowrap !important;
+            justify-content: flex-start !important;
+            padding: 0 16px !important;
+            gap: 16px !important;
+          }
+          .awards-inner img {
+            height: 80px !important;
+            flex-shrink: 0 !important;
           }
         }
       `}</style>

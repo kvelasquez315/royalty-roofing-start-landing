@@ -31,7 +31,7 @@ export default function HeroSection() {
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
-        paddingTop: "96px",
+        paddingTop: "110px",
         overflow: "hidden",
       }}
     >
@@ -64,7 +64,7 @@ export default function HeroSection() {
           width: "100%",
           maxWidth: "1320px",
           margin: "0 auto",
-          padding: "40px 20px 60px",
+          padding: "40px 24px 80px",
           display: "grid",
           gridTemplateColumns: "1fr 460px",
           gap: "48px",
@@ -211,8 +211,8 @@ Repairs done right. Replacements only when necessary. We're out to your home fas
         @media (max-width: 900px) {
           .hero-grid {
             grid-template-columns: 1fr !important;
-            gap: 32px !important;
-            padding: 32px 16px 80px !important;
+            gap: 28px !important;
+            padding: 28px 16px 100px !important;
           }
           .hero-form-col {
             display: block !important;
@@ -223,7 +223,7 @@ Repairs done right. Replacements only when necessary. We're out to your home fas
         }
         @media (max-width: 480px) {
           .hero-grid {
-            padding: 24px 16px 80px !important;
+            padding: 20px 14px 100px !important;
           }
         }
       `}</style>

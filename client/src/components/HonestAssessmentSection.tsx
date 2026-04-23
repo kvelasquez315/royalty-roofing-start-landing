@@ -173,6 +173,7 @@ export default function HonestAssessmentSection() {
             <img
               src={ROOF_PHOTO}
               alt="Royalty Roofing crew completing a residential roofing project in Omaha"
+              className="why-photo"
               style={{
                 width: "100%",
                 height: "520px",
@@ -192,13 +193,19 @@ export default function HonestAssessmentSection() {
             grid-template-columns: 1fr !important;
             gap: 40px !important;
           }
+          .why-photo {
+            height: 360px !important;
+          }
         }
         @media (max-width: 640px) {
           #why-royalty {
-            padding: 64px 0 !important;
+            padding: 56px 0 !important;
           }
           #why-royalty > div {
             padding: 0 16px !important;
+          }
+          .why-photo {
+            height: 260px !important;
           }
         }
       `}</style>

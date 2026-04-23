@@ -1,7 +1,7 @@
 /**
  * Navbar - Royalty Roofing
  * - Top announcement bar: blue bg, key trust points (single line on mobile)
- * - Main bar: near-black (#0A1220), big logo left, hamburger on mobile, phone+CTA right on desktop
+ * - Main bar: white bg, big logo left, hamburger on mobile, phone+CTA right on desktop
  * - Mobile: hamburger opens full-width dropdown menu
  */
 import { useState } from "react";
@@ -43,7 +43,6 @@ export default function Navbar() {
           whiteSpace: "nowrap",
           textOverflow: "ellipsis",
         }}
-        className="announcement-bar"
       >
         <span className="hidden sm:inline">★&nbsp; BEST OF OMAHA: ROOFING &amp; SIDING, 7 YEARS RUNNING &nbsp;|&nbsp; FREE ROOF INSPECTION &nbsp;|&nbsp; WE HANDLE YOUR INSURANCE CLAIM</span>
         <span className="sm:hidden">★ FREE ROOF INSPECTION &nbsp;|&nbsp; BEST OF OMAHA 7 YEARS</span>
@@ -58,7 +57,7 @@ export default function Navbar() {
           alignItems: "center",
           justifyContent: "space-between",
           padding: "0 20px",
-          height: "96px",
+          height: "80px",
         }}
       >
         {/* Logo */}
@@ -66,7 +65,7 @@ export default function Navbar() {
           <img
             src={LOGO}
             alt="Royalty Roofing and Siding"
-            style={{ height: "72px", width: "auto", objectFit: "contain", display: "block" }}
+            style={{ height: "60px", width: "auto", objectFit: "contain", display: "block" }}
           />
         </a>
 
@@ -103,7 +102,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Right: Phone + CTA (desktop) + Hamburger (mobile) */}
+        {/* Right side */}
         <div style={{ display: "flex", alignItems: "center", gap: "12px", flexShrink: 0 }}>
           {/* Phone — visible on sm+ */}
           <a
@@ -126,7 +125,7 @@ export default function Navbar() {
             (402) 216-8850
           </a>
 
-          {/* CTA button — hidden on mobile (sticky bar handles it) */}
+          {/* CTA button — desktop only */}
           <button
             onClick={() => scrollTo("bottom-form")}
             className="hidden lg:block"
@@ -150,11 +149,113 @@ export default function Navbar() {
             Free Estimate
           </button>
 
-
+          {/* Hamburger — mobile/tablet only */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="lg:hidden"
+            aria-label="Toggle menu"
+            style={{
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              padding: "6px",
+              color: "#0A1220",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            {menuOpen ? (
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            ) : (
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+              </svg>
+            )}
+          </button>
         </div>
       </nav>
 
-
+      {/* Mobile dropdown menu */}
+      {menuOpen && (
+        <div
+          className="lg:hidden"
+          style={{
+            background: "white",
+            borderBottom: "1px solid #e5e7eb",
+            padding: "8px 20px 20px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "0",
+            boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
+          }}
+        >
+          {NAV_LINKS.map(({ label, id }) => (
+            <button
+              key={id}
+              onClick={() => scrollTo(id)}
+              style={{
+                background: "none",
+                border: "none",
+                borderBottom: "1px solid #f3f4f6",
+                color: "#0A1220",
+                fontFamily: "var(--font-body)",
+                fontWeight: 600,
+                fontSize: "17px",
+                textAlign: "left",
+                padding: "14px 0",
+                cursor: "pointer",
+                width: "100%",
+              }}
+            >
+              {label}
+            </button>
+          ))}
+          <a
+            href="tel:4022168850"
+            style={{
+              marginTop: "12px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "8px",
+              background: "rgba(61,108,192,0.08)",
+              color: "#3D6CC0",
+              fontFamily: "var(--font-body)",
+              fontWeight: 700,
+              fontSize: "17px",
+              padding: "14px",
+              borderRadius: "8px",
+              textDecoration: "none",
+            }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            Call (402) 216-8850
+          </a>
+          <button
+            onClick={() => scrollTo("bottom-form")}
+            style={{
+              marginTop: "8px",
+              background: "#3D6CC0",
+              color: "white",
+              fontFamily: "var(--font-display)",
+              fontSize: "18px",
+              letterSpacing: "0.08em",
+              padding: "14px",
+              borderRadius: "8px",
+              border: "none",
+              cursor: "pointer",
+              width: "100%",
+            }}
+          >
+            FREE ESTIMATE
+          </button>
+        </div>
+      )}
     </header>
   );
 }
