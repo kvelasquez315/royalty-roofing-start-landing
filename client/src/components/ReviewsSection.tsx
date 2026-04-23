@@ -68,19 +68,7 @@ export default function ReviewsSection() {
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 28px" }}>
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "56px" }}>
-          <p
-            style={{
-              fontFamily: "var(--font-body)",
-              fontWeight: 600,
-              fontSize: "11px",
-              letterSpacing: "0.16em",
-              textTransform: "uppercase",
-              color: "rgba(255,255,255,0.45)",
-              marginBottom: "14px",
-            }}
-          >
-            What Omaha Homeowners Say
-          </p>
+
           <h2
             style={{
               fontFamily: "var(--font-display)",

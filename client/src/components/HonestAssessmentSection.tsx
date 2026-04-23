@@ -41,20 +41,7 @@ export default function HonestAssessmentSection() {
           padding: "0 28px",
         }}
       >
-        {/* Full-width eyebrow + headline */}
-        <p
-          style={{
-            fontFamily: "var(--font-body)",
-            fontWeight: 600,
-            fontSize: "11px",
-            letterSpacing: "0.16em",
-            textTransform: "uppercase",
-            color: "#3D6CC0",
-            marginBottom: "14px",
-          }}
-        >
-          Why Homeowners Choose Royalty
-        </p>
+        {/* Full-width headline */}
 
         <h2
           style={{

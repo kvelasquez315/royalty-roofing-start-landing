@@ -32,20 +32,6 @@ export default function TeamBannerSection() {
       >
         {/* LEFT: Text */}
         <div>
-          <p
-            style={{
-              fontFamily: "var(--font-body)",
-              fontWeight: 600,
-              fontSize: "11px",
-              letterSpacing: "0.16em",
-              textTransform: "uppercase",
-              color: "#3D6CC0",
-              marginBottom: "14px",
-            }}
-          >
-            The Royalty Team
-          </p>
-
           <h2
             style={{
               fontFamily: "var(--font-display)",

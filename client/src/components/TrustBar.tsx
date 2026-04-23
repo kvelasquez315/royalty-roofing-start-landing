@@ -97,21 +97,6 @@ export default function TrustBar() {
 
       {/* Awards strip — white background */}
       <div className="awards-strip" style={{ background: "#ffffff", borderTop: "1px solid #e5e7eb", padding: "48px 28px" }}>
-        <p
-          style={{
-            textAlign: "center",
-            fontFamily: "var(--font-body)",
-            fontSize: "11px",
-            fontWeight: 600,
-            letterSpacing: "0.14em",
-            textTransform: "uppercase",
-            color: "#9CA3AF",
-            marginBottom: "28px",
-          }}
-        >
-          Omaha Magazine's Best of Omaha, 7 Consecutive Years
-        </p>
-
         {/* Award badges row */}
         <div
           style={{

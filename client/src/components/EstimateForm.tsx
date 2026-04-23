@@ -128,9 +128,7 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
         >
           Get Your Free Consultation
         </h3>
-        <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "13px", marginTop: "4px", fontFamily: "var(--font-body)" }}>
-          Response within one business day. No obligation.
-        </p>
+
       </div>
 
       <div className="px-7 pb-7 space-y-4">
