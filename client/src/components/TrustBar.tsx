@@ -14,13 +14,13 @@ const STATS = [
 ];
 
 const AWARDS = [
-  { src: "/manus-storage/award-2020_17c3d195.png", alt: "Best of Omaha 2020, Residential Roofing" },
-  { src: "/manus-storage/award-2021-screenshot_d404d133.png", alt: "Best of Omaha 2021, Residential Roofing" },
-  { src: "/manus-storage/award-2022_6874c154.png", alt: "Best of Omaha 2022, Residential Siding" },
-  { src: "/manus-storage/award-2023_495972e7.png", alt: "Best of Omaha 2023, Residential Roofing" },
-  { src: "/manus-storage/award-2024_81d046f1.png", alt: "Best of Omaha 2024, Residential Roofing" },
-  { src: "/manus-storage/award-2025_c49a7694.png", alt: "Best of Omaha 2025, Residential Roofing" },
-  { src: "/manus-storage/award-2026_19da9448.png", alt: "Best of Omaha 2026, Residential Siding" },
+  { src: "/manus-storage/award-2020-tight_2c655ed7.png", alt: "Best of Omaha 2020, Residential Roofing" },
+  { src: "/manus-storage/award-2021-tight_245f0b6c.png", alt: "Best of Omaha 2021, Residential Roofing" },
+  { src: "/manus-storage/award-2022-tight_0908fdf7.png", alt: "Best of Omaha 2022, Residential Siding" },
+  { src: "/manus-storage/award-2023-tight_f5561885.png", alt: "Best of Omaha 2023, Residential Roofing" },
+  { src: "/manus-storage/award-2024-tight_38bb35a8.png", alt: "Best of Omaha 2024, Residential Roofing" },
+  { src: "/manus-storage/award-2025-tight_cf8da63c.png", alt: "Best of Omaha 2025, Residential Roofing" },
+  { src: "/manus-storage/award-2026-tight_93177d4e.png", alt: "Best of Omaha 2026, Residential Siding" },
 ];
 
 function AnimatedStat({ display }: { display: string }) {
@@ -130,7 +130,7 @@ export default function TrustBar() {
             src={award.src}
             alt={award.alt}
             style={{
-              height: "88px",
+              height: "130px",
               width: "auto",
               objectFit: "contain",
               opacity: 0.85,
@@ -165,7 +165,7 @@ export default function TrustBar() {
             padding: 32px 16px !important;
           }
           .awards-strip img {
-            height: 64px !important;
+            height: 90px !important;
           }
         }
       `}</style>
