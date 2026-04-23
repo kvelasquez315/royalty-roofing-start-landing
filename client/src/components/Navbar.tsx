@@ -6,7 +6,7 @@
  */
 import { useState } from "react";
 
-const LOGO = "/manus-storage/logo-white-tight_7b02edfe.png";
+const LOGO = "/manus-storage/logo-color_580bd378.webp";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -52,8 +52,8 @@ export default function Navbar() {
       {/* Main nav */}
       <nav
         style={{
-          background: "#0A1220",
-          borderBottom: "1px solid rgba(255,255,255,0.07)",
+          background: "#ffffff",
+          borderBottom: "1px solid #e5e7eb",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
@@ -79,7 +79,7 @@ export default function Navbar() {
               style={{
                 background: "none",
                 border: "none",
-                color: "rgba(255,255,255,0.80)",
+                color: "rgba(15,27,45,0.70)",
                 fontFamily: "var(--font-body)",
                 fontWeight: 600,
                 fontSize: "16px",
@@ -90,11 +90,11 @@ export default function Navbar() {
                 transition: "color 0.15s, background 0.15s",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.color = "#fff";
-                (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.06)";
+                (e.currentTarget as HTMLButtonElement).style.color = "#0F1B2D";
+                (e.currentTarget as HTMLButtonElement).style.background = "rgba(0,0,0,0.05)";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.80)";
+                (e.currentTarget as HTMLButtonElement).style.color = "rgba(15,27,45,0.70)";
                 (e.currentTarget as HTMLButtonElement).style.background = "none";
               }}
             >
@@ -112,7 +112,7 @@ export default function Navbar() {
             style={{
               alignItems: "center",
               gap: "7px",
-              color: "white",
+              color: "#0F1B2D",
               fontFamily: "var(--font-body)",
               fontWeight: 700,
               fontSize: "16px",
@@ -168,9 +168,9 @@ export default function Navbar() {
             }}
             aria-label="Toggle menu"
           >
-            <span style={{ display: "block", width: "24px", height: "2px", background: "white", borderRadius: "2px", transition: "transform 0.2s", transform: menuOpen ? "rotate(45deg) translate(5px, 5px)" : "none" }} />
-            <span style={{ display: "block", width: "24px", height: "2px", background: "white", borderRadius: "2px", opacity: menuOpen ? 0 : 1, transition: "opacity 0.2s" }} />
-            <span style={{ display: "block", width: "24px", height: "2px", background: "white", borderRadius: "2px", transition: "transform 0.2s", transform: menuOpen ? "rotate(-45deg) translate(5px, -5px)" : "none" }} />
+            <span style={{ display: "block", width: "24px", height: "2px", background: "#0F1B2D", borderRadius: "2px", transition: "transform 0.2s", transform: menuOpen ? "rotate(45deg) translate(5px, 5px)" : "none" }} />
+            <span style={{ display: "block", width: "24px", height: "2px", background: "#0F1B2D", borderRadius: "2px", opacity: menuOpen ? 0 : 1, transition: "opacity 0.2s" }} />
+            <span style={{ display: "block", width: "24px", height: "2px", background: "#0F1B2D", borderRadius: "2px", transition: "transform 0.2s", transform: menuOpen ? "rotate(-45deg) translate(5px, -5px)" : "none" }} />
           </button>
         </div>
       </nav>
@@ -179,8 +179,8 @@ export default function Navbar() {
       {menuOpen && (
         <div
           style={{
-            background: "#0A1220",
-            borderBottom: "1px solid rgba(255,255,255,0.1)",
+          background: "#ffffff",
+          borderBottom: "1px solid #e5e7eb",
             padding: "8px 0 16px",
           }}
           className="lg:hidden"
@@ -195,13 +195,13 @@ export default function Navbar() {
                 textAlign: "left",
                 background: "none",
                 border: "none",
-                color: "rgba(255,255,255,0.85)",
-                fontFamily: "var(--font-body)",
-                fontWeight: 600,
-                fontSize: "17px",
-                padding: "14px 24px",
-                cursor: "pointer",
-                borderBottom: "1px solid rgba(255,255,255,0.05)",
+              color: "#0F1B2D",
+              fontFamily: "var(--font-body)",
+              fontWeight: 600,
+              fontSize: "17px",
+              padding: "14px 24px",
+              cursor: "pointer",
+              borderBottom: "1px solid #f3f4f6",
                 letterSpacing: "0.02em",
               }}
             >
@@ -217,15 +217,15 @@ export default function Navbar() {
                 alignItems: "center",
                 justifyContent: "center",
                 gap: "8px",
-                background: "rgba(255,255,255,0.08)",
-                color: "white",
+                background: "rgba(0,0,0,0.05)",
+                color: "#0F1B2D",
                 fontFamily: "var(--font-body)",
                 fontWeight: 700,
                 fontSize: "15px",
                 padding: "13px 16px",
                 borderRadius: "8px",
                 textDecoration: "none",
-                border: "1px solid rgba(255,255,255,0.12)",
+                border: "1px solid #e5e7eb",
               }}
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
