@@ -7,6 +7,13 @@
 import { useState } from "react";
 import { CheckCircle, Loader2 } from "lucide-react";
 
+function pushEvent(eventName: string, params?: Record<string, string>) {
+  if (typeof window !== "undefined") {
+    (window as any).dataLayer = (window as any).dataLayer || [];
+    (window as any).dataLayer.push({ event: eventName, ...params });
+  }
+}
+
 interface EstimateFormProps {
   variant?: "glass" | "card";
 }
@@ -37,6 +44,7 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
         });
       }
       setStatus("success");
+      pushEvent("form_submission", { form_type: "roofing_estimate" });
     } catch {
       setStatus("error");
     }
