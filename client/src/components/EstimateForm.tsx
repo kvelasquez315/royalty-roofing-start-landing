@@ -2,8 +2,7 @@
  * EstimateForm — shared form used in HeroSection and BottomFormSection
  * Design: Dark card (#0d1a2e / near-black), large white inputs with rounded-xl,
  * full-width selects stacked, big blue CTA button with Bebas Neue uppercase text.
- * Matches reference screenshot from Moose Roofing style.
- * Variant: "glass" (hero overlay) | "card" (white card on dark bg)
+ * Fields: First Name, Last Name, Phone only.
  */
 import { useState } from "react";
 import { CheckCircle, Loader2 } from "lucide-react";
@@ -18,25 +17,15 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
     firstName: "",
     lastName: "",
     phone: "",
-    address: "",
-    consentMessages: false,
-    consentPrivacy: false,
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value, type } = e.target;
-    setForm((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
-    }));
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.consentPrivacy) {
-      alert("Please agree to the Privacy Policy to continue.");
-      return;
-    }
     setStatus("loading");
     try {
       const webhookUrl = import.meta.env.VITE_FORM_WEBHOOK_URL || "https://services.leadconnectorhq.com/hooks/2HOx7nqhyy85pwGlIHvA/webhook-trigger/nl9HCf4tULqBC1DFj3uX";
@@ -77,6 +66,7 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
     fontFamily: "var(--font-body)",
     letterSpacing: "0.02em",
   };
+
   if (status === "success") {
     return (
       <div
@@ -128,7 +118,6 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
         >
           Get Your Free Consultation
         </h3>
-
       </div>
 
       <div className="px-7 pb-7 space-y-4">
@@ -177,60 +166,7 @@ export default function EstimateForm({ variant = "card" }: EstimateFormProps) {
           />
         </div>
 
-        {/* Address — full width */}
-        <div>
-          <label style={labelStyle} htmlFor="address">Address <span style={{ color: "#f87171" }}>*</span></label>
-          <input
-            id="address"
-            name="address"
-            type="text"
-            required
-            placeholder="Street address"
-            value={form.address}
-            onChange={handleChange}
-            style={inputStyle}
-          />
-        </div>
-
-        {/* Consents */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "10px", paddingTop: "2px" }}>
-          <label style={{ display: "flex", alignItems: "flex-start", gap: "10px", cursor: "pointer" }}>
-            <input
-              type="checkbox"
-              name="consentMessages"
-              checked={form.consentMessages}
-              onChange={handleChange}
-              style={{ marginTop: "2px", flexShrink: 0, width: "16px", height: "16px", accentColor: "#3D6CC0" }}
-            />
-            <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.55)", lineHeight: 1.6, fontFamily: "var(--font-body)" }}>
-              By checking this box, I consent to receive transactional messages from Royalty Roofing and Siding related to my estimate request. Message frequency may vary. Message &amp; Data rates may apply. Reply HELP for help or STOP to opt out.
-            </span>
-          </label>
-          <label style={{ display: "flex", alignItems: "flex-start", gap: "10px", cursor: "pointer" }}>
-            <input
-              type="checkbox"
-              name="consentPrivacy"
-              checked={form.consentPrivacy}
-              onChange={handleChange}
-              required
-              style={{ marginTop: "2px", flexShrink: 0, width: "16px", height: "16px", accentColor: "#3D6CC0" }}
-            />
-            <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.55)", lineHeight: 1.6, fontFamily: "var(--font-body)" }}>
-              I have read and agree to the{" "}
-              <a
-                href="https://royaltyroofing.org/privacy-policy"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: "#7aaaf0", textDecoration: "underline" }}
-              >
-                Privacy Policy
-              </a>
-              .
-            </span>
-          </label>
-        </div>
-
-        {/* Submit button — big, blue, Bebas Neue uppercase */}
+        {/* Submit button */}
         <button
           type="submit"
           disabled={status === "loading"}
